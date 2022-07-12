@@ -60,6 +60,10 @@ body {
   position: relative;
 }
 
+option {
+  border: none;
+  background-color: #808080;
+}
 
 .selectContainer::after {
   content: url('../img/globo\ icone\ header.svg');
