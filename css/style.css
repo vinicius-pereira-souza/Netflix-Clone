@@ -242,4 +242,14 @@ body {
 }
 .baiseSerie .title {
   max-width: 530px;
+}
+
+.assista {
+  padding: 70px 0;
+}
+.assista img {
+  width: 512px;
+}
+.assista .title {
+  max-width: 540px;
 }/*# sourceMappingURL=style.css.map */
