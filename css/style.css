@@ -9,7 +9,6 @@ body {
   color: #fff;
   background-color: #222222;
   font-family: "Inter", sans-serif;
-  height: 2000px;
 }
 
 .header {
@@ -252,4 +251,66 @@ body {
 }
 .assista .title {
   max-width: 540px;
+}
+
+.perguntasFreguentes > h1 {
+  text-align: center;
+  font-size: 50px;
+  margin: 75px 0 55px 0;
+}
+.perguntasFreguentes .pergunta {
+  padding: 20px 30px;
+  max-width: 820px;
+  background-color: #303030;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.perguntasFreguentes .pergunta h2 {
+  font-weight: 400;
+}
+.perguntasFreguentes .pergunta .iconePLus {
+  width: 27px;
+  height: 27px;
+  position: relative;
+}
+.perguntasFreguentes .pergunta .iconePLus::before, .perguntasFreguentes .pergunta .iconePLus::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+}
+.perguntasFreguentes .pergunta .iconePLus::before {
+  width: 27px;
+  height: 2px;
+  top: 50%;
+  transform: translateX(-50%);
+}
+.perguntasFreguentes .pergunta .iconePLus::after {
+  width: 2px;
+  height: 27px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.perguntasFreguentes .pergunta.active .iconePLus {
+  transform: rotateX(45deg);
+}
+.perguntasFreguentes .resposta {
+  max-width: 820px;
+  height: 0px;
+  padding: 0 30px;
+  overflow-y: hidden;
+  margin: 2px auto 5px auto;
+  background-color: #303030;
+}
+.perguntasFreguentes .resposta p {
+  font-size: 26px;
+  line-height: 30px;
+}
+.perguntasFreguentes .resposta p + p {
+  margin-top: 30px;
+}
+.perguntasFreguentes .resposta.active {
+  height: auto;
+  padding: 35px 30px;
 }/*# sourceMappingURL=style.css.map */

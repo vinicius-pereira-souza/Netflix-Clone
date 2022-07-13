@@ -10,7 +10,6 @@ body {
   color: #fff;
   background-color: #222222;
   font-family: 'Inter', sans-serif;
-  height: 2000px;
 }
 
 .header {
@@ -294,5 +293,81 @@ body {
 
   .title {
     max-width: 540px;
+  }
+}
+
+.perguntasFreguentes {
+  & > h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 75px 0 55px 0;
+  }
+
+  .pergunta {
+    padding: 20px 30px;
+    max-width: 820px;
+    background-color: #303030;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-weight: 400;
+    }
+
+    .iconePLus {
+      width: 27px;
+      height: 27px;
+      position: relative;
+      &::before, &::after {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+      }
+
+      &::before {
+        width: 27px;
+        height: 2px;
+        top: 50%;
+        transform: translateX(-50%);
+      }
+
+      &::after {
+        width: 2px;
+        height: 27px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .pergunta.active {
+    .iconePLus {
+      transform: rotateX(45deg);      
+    }
+  }
+
+  .resposta {
+    max-width: 820px;
+    height: 0px;
+    padding: 0 30px;
+    overflow-y: hidden;
+    margin: 2px auto 5px auto;
+    background-color: #303030;
+
+    p {
+      font-size: 26px;
+      line-height: 30px;
+    }
+
+    p + p {
+      margin-top: 30px;
+    }
+  }
+
+  .resposta.active {
+    height: auto;
+    padding: 35px 30px;
   }
 }
