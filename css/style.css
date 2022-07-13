@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,73 +8,54 @@
 body {
   color: #fff;
   background-color: #222222;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
+  height: 2000px;
 }
 
 .header {
   max-width: 100%;
   height: 660px;
   padding: 30px 45px 0 45px;
-  background-image: linear-gradient(360deg,rgba(0,0,0,1.8) 0,transparent 60%,rgba(0,0,0,0.8)), url('../img/background.jpg');
+  background-image: linear-gradient(360deg, rgb(0, 0, 0) 0, transparent 60%, rgba(0, 0, 0, 0.8)), url("../img/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  box-shadow: inset 0px 0px 195px 144px rgb(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 195px 144px rgba(0, 0, 0, 0.5);
 }
-
-.flexHeader {
+.header .flexHeader {
   max-width: 1240px;
   margin: 0 auto 158px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.logo {
+.header .flexHeader .logo {
   width: 135px;
   display: block;
 }
-
-.logo svg path {
+.header .flexHeader .logo svg path {
   fill: #E50914;
 }
-
-.flexSelectLogin {
+.header .flexHeader .flexSelectLogin {
   display: flex;
   align-items: center;
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
-
-.selectContainer {
+.header .flexHeader .flexSelectLogin .selectContainer {
   position: relative;
 }
-
-.flexSelectLogin select {
-  padding: 8px 25px;
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  -webkit-appearance: none;
-  position: relative;
-}
-
-option {
-  border: none;
-  background-color: #808080;
-}
-
-.selectContainer::after {
-  content: url('../img/globo\ icone\ header.svg');
+.header .flexHeader .flexSelectLogin .selectContainer::after {
+  content: url("../img/globo icone header.svg");
   display: block;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 5px;
 }
-
-.selectContainer::before {
-  content: '';
+.header .flexHeader .flexSelectLogin .selectContainer::before {
+  content: "";
   display: block;
   width: 0px;
   height: 0px;
@@ -87,9 +67,19 @@ option {
   top: 14px;
   right: 8px;
 }
-
-
-.flexSelectLogin a {
+.header .flexHeader .flexSelectLogin select {
+  padding: 8px 25px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  -webkit-appearance: none;
+  position: relative;
+}
+.header .flexHeader .flexSelectLogin select option {
+  border: none;
+  background-color: #808080;
+}
+.header .flexHeader .flexSelectLogin a {
   text-decoration: none;
   color: #fff;
   padding: 7px 17px;
@@ -97,35 +87,28 @@ option {
   background-color: #E50914;
   transition: 0.3s;
 }
-
-.flexSelectLogin a:hover {
+.header .flexHeader .flexSelectLogin a:hover {
   background-color: #F40612;
   transition: 0.3s;
 }
-
-:is(.header) h1, h2, h3 {
-  color: #fff;
+.header h1, .header h2, .header h3 {
   text-align: center;
 }
-
 .header h1 {
   max-width: 680px;
   margin: 0 auto 10px auto;
   font-size: 47px;
 }
-
 .header h2 {
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 35px;
 }
-
 .header h3 {
   font-size: 18px;
   font-weight: 400;
 }
-
-form {
+.header form {
   display: block;
   max-width: 635px;
   margin: 25px auto 0 auto;
@@ -133,34 +116,29 @@ form {
   display: grid;
   grid-template-columns: minmax(450px, 1fr) minmax(auto, 185px);
 }
-
-#email {
+.header form #email {
   height: 60px;
   padding-left: 15px;
 }
-
-.placeholderAnimation {
+.header form #email.active:focus {
+  border: none;
+}
+.header form #email.active:focus + .placeholderAnimation {
+  font-size: 13px;
+  font-weight: 700;
+  top: 12px;
+  transition: 0.3s;
+}
+.header form .placeholderAnimation {
   display: block;
-  color:#8C8C8C;
+  color: #8C8C8C;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 15px;
   transition: 0.3s;
 }
-
-#email.active:focus {
-  border: none;
-}
-
-#email.active:focus + .placeholderAnimation {
-  font-size: 13px;
-  font-weight: 700;
-  top: 12px;
-  transition: 0.3s;
-}
-
-form button {
+.header form button {
   height: 60px;
   border: none;
   padding-left: 20px;
@@ -168,14 +146,12 @@ form button {
   color: #fff;
   font-size: 25px;
   text-align: start;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   position: relative;
   transition: 0.3s;
 }
-
-form button::after, 
-form button::before {
-  content: '';
+.header form button::after, .header form button::before {
+  content: "";
   display: block;
   width: 18px;
   height: 2px;
@@ -183,19 +159,16 @@ form button::before {
   position: absolute;
   right: 20px;
 }
-
-form button::after {
+.header form button::after {
   top: 24px;
   transform: rotate(40deg);
 }
-
-form button::before {
+.header form button::before {
   top: 35px;
   transform: rotate(-40deg);
 }
-
-form button:hover {
+.header form button:hover {
   cursor: pointer;
   background-color: #F40612;
   transition: 0.3s;
-}
+}/*# sourceMappingURL=style.css.map */
