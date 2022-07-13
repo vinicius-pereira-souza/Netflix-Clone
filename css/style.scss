@@ -204,54 +204,47 @@ body {
   padding: 20px 0 50px 0;
   background-color: #000;
 
-  .containerGrid {
+  .containerFlex {
     max-width: 1130px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-  }
+    justify-content: space-between;
 
-  .title {
-    h1 {
-      font-size: 45px;
-      margin-bottom: 20px;
+    .title {
+      h1 {
+        font-size: 46px;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 25px;
+      }
     }
 
-    p {
-      font-size: 24px;
-    }
-  }
-
-  .imgWithVideo {
-    max-width: 530px;
-    position: relative;
-    img {
+    .imgWithVideo {
       max-width: 530px;
       position: relative;
-      z-index: 10;
-    }
-
-    video {
-      max-width: 385px;
-      height: 220px;
-      position: absolute;
-      top: 81px;
-      left: 70px;
+      img {
+        max-width: 530px;
+        position: relative;
+        z-index: 10;
+      }
+  
+      video {
+        max-width: 385px;
+        height: 220px;
+        position: absolute;
+        top: 81px;
+        left: 70px;
+      }
     }
   }
 }
 
 .baiseSerie {
-  .containerGrid {
-    justify-content: space-between;
-  }
-
   .img {
     position: relative;
-    & > img {
-      display: block;
-      max-width: 510px;
-    }
 
     .subFlex {
       width: 335px;
@@ -266,7 +259,7 @@ body {
       bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
-
+      
       img {
         width: 50px;
       }
@@ -288,6 +281,6 @@ body {
   }
 
   .title {
-    max-width: 510px;
+    max-width: 530px;
   }
 }
