@@ -416,7 +416,7 @@ body {
 .footer .containerFooter .flexFooter {
   padding-top: 30px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 .footer .containerFooter .flexFooter ul {
@@ -437,6 +437,7 @@ body {
 .footer .containerFooter .selectContainer::after {
   content: url("../img/globo icone.svg");
   display: block;
+  position: absolute;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

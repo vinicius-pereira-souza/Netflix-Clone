@@ -1,4 +1,5 @@
 // Variaveis
+
 $white: #fff;
 $black: #000;
 $red: #E50914;
@@ -6,10 +7,14 @@ $blue: #0071eb;
 $red_hover: #F40612;
 $gray_content: #737373;
 $gray_placeholder: #8C8C8C;
+$header_shadow: rgb(0, 0, 0, 0.5);
 $gray_background_body: #222222;
 $gray_background_question: #303030;
 
+$maxWidthContainer: 530px;
+
 // mixins
+
 @mixin flexCenter {
   display: flex;
   align-items: center;
@@ -37,3 +42,4 @@ $gray_background_question: #303030;
   display: block;
   margin: 0 auto;
 }
+
