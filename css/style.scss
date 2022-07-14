@@ -241,7 +241,7 @@ body {
   }
 }
 
-.baiseSerie {
+.baixeSerie {
   .img {
     position: relative;
 
@@ -316,7 +316,7 @@ body {
   }
 }
 
-.perguntasFreguentes {
+.perguntasFrequentes {
   & > h1 {
     text-align: center;
     font-size: 50px;
@@ -472,3 +472,80 @@ body {
   }
 }
 
+.footer {
+  margin-bottom: 0;
+  color: #737373;
+  .containerFooter {
+    max-width: 830px;
+    margin: 0 auto;
+
+    p {
+      font-size: 15px;
+    }
+
+    .flexFooter {
+      padding-top: 30px ;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      ul {
+        list-style: none;
+
+        li {
+          font-size: 13px;
+          margin-bottom: 13px;
+
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .selectContainer {
+      position: relative;
+      margin: 20px 0;
+      &::after {
+        content: url('../img/globo\ icone.svg');
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 13px;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 0px;
+        border: 6px solid #737373;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        position: absolute;
+        top: 24px;
+        left: 127px;
+      }
+    }
+
+    select {
+      font-size: 16px;
+      padding: 20px 40px;
+      background-color: transparent;
+      border: 1px solid #737373;
+      border-radius: 2px;
+      color: #737373;
+      -webkit-appearance: none;
+      position: relative;
+
+      option {
+        border: none;
+        background-color: #000;
+
+      }
+    }
+  }
+}
