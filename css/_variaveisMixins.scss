@@ -1,0 +1,31 @@
+// Variaveis
+
+
+// mixins
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexCenterBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin absoluteAlignX {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin absoluteAlignY {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin blockAlignAuto {
+  display: block;
+  margin: 0 auto;
+}
