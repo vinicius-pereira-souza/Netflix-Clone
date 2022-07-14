@@ -174,7 +174,7 @@ body {
 
 .sectionContainer {
   max-width: 100%;
-  margin: 10px 0;
+  margin: 8px 0;
   padding: 20px 0 50px 0;
   background-color: #000;
 }
@@ -243,13 +243,29 @@ body {
   max-width: 530px;
 }
 
-.assista {
+.assista > .containerFlex .title {
+  max-width: 530px;
+}
+.assista > .containerFlex .imgWithVideo {
+  max-width: 530px;
+  position: relative;
+  padding-top: 40px;
+}
+.assista > .containerFlex .imgWithVideo video {
+  max-width: 325px;
+  height: 220px;
+  position: absolute;
+  top: 60px;
+  left: 100px;
+}
+
+.criePerfil {
   padding: 70px 0;
 }
-.assista img {
+.criePerfil img {
   width: 512px;
 }
-.assista .title {
+.criePerfil .title {
   max-width: 540px;
 }
 
