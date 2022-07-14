@@ -1,0 +1,45 @@
+// Variaveis
+
+$white: #fff;
+$black: #000;
+$red: #E50914;
+$blue: #0071eb;
+$red_hover: #F40612;
+$gray_content: #737373;
+$gray_placeholder: #8C8C8C;
+$header_shadow: rgb(0, 0, 0, 0.5);
+$gray_background_body: #222222;
+$gray_background_question: #303030;
+
+$maxWidthContainer: 530px;
+
+// mixins
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexCenterBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin absoluteAlignX {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin absoluteAlignY {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin blockAlignAuto {
+  display: block;
+  margin: 0 auto;
+}
+
