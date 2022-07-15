@@ -307,83 +307,50 @@ body {
 }
 
 .perguntasFrequentes {
-  & > h1 {
-    text-align: center;
-    font-size: 50px;
-    margin: 75px 0 55px 0;
-  }
-
-  .pergunta {
-    @include flexCenterBetween;
-    padding: 20px 30px;
+  .gridPerguntaContainer {
     max-width: 820px;
-    background-color: $gray_background_question;
     margin: 0 auto;
-    
-    h2 {
-      font-weight: 400;
-    }
+    display: grid;
+    grid-template-columns: 1fr;
 
-    .iconePLus {
-      width: 27px;
-      height: 27px;
+    .pergunta {
+      @include flexCenterBetween;
+      width: 100%;
       position: relative;
-      &::before, &::after {
-        content: '';
-        background-color: $white;
-        position: absolute;
+      padding: 20px 30px;
+      margin: 75px 0 55px 0;
+      font-size: 27px;
+      text-align: start;
+      color: $white;
+      font-family: 'Inter', sans-serif;
+      background-color: $gray_background_question;
+
+      .iconePLus  {
+        display: block;
+        margin-right: 10px;
+        position: relative;
+
+        &::before, &::after {
+          content: '';
+          background-color: $white;
+          position: absolute;
+        }
+  
+        &::before {
+          width: 27px;
+          height: 2px;
+          top: 50%;
+          transform: translateX(-50%);
+        }
+  
+        &::after {
+          @include absoluteAlignX;
+          width: 2px;
+          height: 27px;
+        }
       }
-
-      &::before {
-        width: 27px;
-        height: 2px;
-        top: 50%;
-        transform: translateX(-50%);
-      }
-
-      &::after {
-        @include absoluteAlignX;
-        width: 2px;
-        height: 27px;
-      }
     }
   }
-
-  .pergunta.active {
-    .iconePLus {
-      transform: rotateX(45deg);      
-    }
-  }
-
-  .resposta {
-    max-width: 820px;
-    height: 0px;
-    padding: 0 30px;
-    overflow-y: hidden;
-    margin: 2px auto 5px auto;
-    background-color: #303030;
-
-    p {
-      font-size: 26px;
-      line-height: 30px;
-    }
-
-    p + p {
-      margin-top: 30px;
-    }
-  }
-
-  .resposta.active {
-    height: auto;
-    padding: 35px 30px;
-  }
-
-  & > p {
-    font-size: 19px;
-    text-align: center;
-    margin: 70px 0 20px 0;
-  }
-
   form {
     @include blockAlignAuto;
     max-width: 635px;
@@ -456,6 +423,7 @@ body {
     }
   }
 }
+
 
 .footer {
   margin-bottom: 0;
