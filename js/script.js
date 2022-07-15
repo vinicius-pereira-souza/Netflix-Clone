@@ -1,6 +1,40 @@
-const input = document.querySelector('#email')
+// Validação dos inputs
 
-console.log(input)
+const btns = document.querySelectorAll('button[type="submit"]')
+
+btns.forEach(btn => {
+  btn.addEventListener('click', validarInput)
+})
+
+function validarInput(e) {
+  e.preventDefault()
+  const input = e.target.parentNode.querySelector
+  ('input')
+  const err = e.target.parentNode.nextElementSibling
+
+  if(!input.checkValidity()) {
+    const err = e.target.parentNode.nextElementSibling
+    err.classList.add('err')
+  } else {
+    err.classList.remove('err')
+    input.value = ''
+  }
+}
+
+// animação do placeholder
+
+// const inputs = document.querySelectorAll('input')
+
+// inputs.forEach(input => {
+//   input.addEventListener('click', handleValidacaoInput)
+// })
+
+// function handleValidacaoInput(e) {
+//   e.preventDefault()
+
+// }
+
+// Perguntas Frequentes
 
 const perguntasBtns = document.querySelectorAll('.pergunta')
 

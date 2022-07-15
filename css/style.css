@@ -373,14 +373,14 @@ body {
   display: grid;
   grid-template-columns: minmax(450px, 1fr) minmax(auto, 185px);
 }
-.perguntasFrequentes .formContainer form #email {
+.perguntasFrequentes .formContainer form #emailFooter {
   height: 60px;
   padding-left: 15px;
 }
-.perguntasFrequentes .formContainer form #email.active:focus {
+.perguntasFrequentes .formContainer form #emailFooter.active:focus {
   border: none;
 }
-.perguntasFrequentes .formContainer form #email.active:focus + .placeholderAnimation {
+.perguntasFrequentes .formContainer form #emailFooter:focus + .placeholderAnimation {
   font-size: 13px;
   font-weight: 700;
   top: 12px;

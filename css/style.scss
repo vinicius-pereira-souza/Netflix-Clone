@@ -422,7 +422,7 @@ body {
       display: grid;
       grid-template-columns: minmax(450px, 1fr) minmax(auto, 185px);
   
-      #email {
+      #emailFooter {
         height: 60px;
         padding-left: 15px;
   
@@ -431,7 +431,7 @@ body {
         }
       }
   
-      #email.active:focus + .placeholderAnimation {
+      #emailFooter:focus + .placeholderAnimation {
         font-size: 13px;
         font-weight: 700;
         top: 12px;
