@@ -1,3 +1,7 @@
+const input = document.querySelector('#email')
+
+console.log(input)
+
 const perguntasBtns = document.querySelectorAll('.pergunta')
 
 perguntasBtns.forEach(pergunta => {

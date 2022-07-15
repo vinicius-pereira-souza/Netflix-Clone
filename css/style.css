@@ -107,28 +107,30 @@ body {
   font-size: 18px;
   font-weight: 400;
 }
-.header form {
-  display: block;
+.header .formContainer {
   max-width: 635px;
   margin: 25px auto 0 auto;
+}
+.header .formContainer form {
+  width: 100%;
   position: relative;
   display: grid;
   grid-template-columns: minmax(450px, 1fr) minmax(auto, 185px);
 }
-.header form #email {
+.header .formContainer form #email {
   height: 60px;
   padding-left: 15px;
 }
-.header form #email.active:focus {
+.header .formContainer form #email.active:focus {
   border: none;
 }
-.header form #email.active:focus + .placeholderAnimation {
+.header .formContainer form #email:focus + .placeholderAnimation {
   font-size: 13px;
   font-weight: 700;
   top: 12px;
   transition: 0.3s;
 }
-.header form .placeholderAnimation {
+.header .formContainer form .placeholderAnimation {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -137,7 +139,7 @@ body {
   left: 15px;
   transition: 0.3s;
 }
-.header form button {
+.header .formContainer form button {
   height: 60px;
   border: none;
   padding-left: 20px;
@@ -149,7 +151,7 @@ body {
   position: relative;
   transition: 0.3s;
 }
-.header form button::after, .header form button::before {
+.header .formContainer form button::after, .header .formContainer form button::before {
   content: "";
   display: block;
   width: 18px;
@@ -158,18 +160,27 @@ body {
   position: absolute;
   right: 20px;
 }
-.header form button::after {
+.header .formContainer form button::after {
   top: 24px;
   transform: rotate(40deg);
 }
-.header form button::before {
+.header .formContainer form button::before {
   top: 35px;
   transform: rotate(-40deg);
 }
-.header form button:hover {
+.header .formContainer form button:hover {
   cursor: pointer;
   background-color: #F40612;
   transition: 0.3s;
+}
+.header .formContainer > p {
+  display: none;
+  font-size: 13px;
+  color: #E50914;
+  margin-top: 5px;
+}
+.header .formContainer > p.err {
+  display: block;
 }
 
 .sectionContainer {
@@ -352,28 +363,30 @@ body {
   text-align: center;
   margin-bottom: 20px;
 }
-.perguntasFrequentes form {
-  display: block;
-  margin: 0 auto;
+.perguntasFrequentes .formContainer {
   max-width: 635px;
+  margin: 25px auto 0 auto;
+}
+.perguntasFrequentes .formContainer form {
+  width: 100%;
   position: relative;
   display: grid;
   grid-template-columns: minmax(450px, 1fr) minmax(auto, 185px);
 }
-.perguntasFrequentes form #emailFooter {
+.perguntasFrequentes .formContainer form #email {
   height: 60px;
   padding-left: 15px;
 }
-.perguntasFrequentes form #emailFooter.active:focus {
+.perguntasFrequentes .formContainer form #email.active:focus {
   border: none;
 }
-.perguntasFrequentes form #emailFooter.active:focus + .placeholderAnimation {
+.perguntasFrequentes .formContainer form #email.active:focus + .placeholderAnimation {
   font-size: 13px;
   font-weight: 700;
   top: 12px;
   transition: 0.3s;
 }
-.perguntasFrequentes form .placeholderAnimation {
+.perguntasFrequentes .formContainer form .placeholderAnimation {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -382,7 +395,7 @@ body {
   left: 15px;
   transition: 0.3s;
 }
-.perguntasFrequentes form button {
+.perguntasFrequentes .formContainer form button {
   height: 60px;
   border: none;
   padding-left: 20px;
@@ -394,7 +407,7 @@ body {
   position: relative;
   transition: 0.3s;
 }
-.perguntasFrequentes form button::after, .perguntasFrequentes form button::before {
+.perguntasFrequentes .formContainer form button::after, .perguntasFrequentes .formContainer form button::before {
   content: "";
   display: block;
   width: 18px;
@@ -403,18 +416,27 @@ body {
   position: absolute;
   right: 20px;
 }
-.perguntasFrequentes form button::after {
+.perguntasFrequentes .formContainer form button::after {
   top: 24px;
   transform: rotate(40deg);
 }
-.perguntasFrequentes form button::before {
+.perguntasFrequentes .formContainer form button::before {
   top: 35px;
   transform: rotate(-40deg);
 }
-.perguntasFrequentes form button:hover {
+.perguntasFrequentes .formContainer form button:hover {
   cursor: pointer;
   background-color: #F40612;
   transition: 0.3s;
+}
+.perguntasFrequentes .formContainer > p {
+  display: none;
+  font-size: 13px;
+  color: #E50914;
+  margin-top: 5px;
+}
+.perguntasFrequentes .formContainer > p.err {
+  display: block;
 }
 
 .footer {
