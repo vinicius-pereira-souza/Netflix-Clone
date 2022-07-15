@@ -269,9 +269,15 @@ body {
   max-width: 540px;
 }
 
+.perguntasFrequentes > h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 75px;
+}
 .perguntasFrequentes .gridPerguntaContainer {
   max-width: 820px;
   margin: 0 auto;
+  padding: 75px;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -282,7 +288,7 @@ body {
   width: 100%;
   position: relative;
   padding: 20px 30px;
-  margin: 75px 0 55px 0;
+  margin-bottom: 5px;
   font-size: 27px;
   text-align: start;
   color: #fff;
@@ -293,6 +299,7 @@ body {
   display: block;
   margin-right: 10px;
   position: relative;
+  transition: 0.3s;
 }
 .perguntasFrequentes .gridPerguntaContainer .pergunta .iconePLus::before, .perguntasFrequentes .gridPerguntaContainer .pergunta .iconePLus::after {
   content: "";
@@ -311,6 +318,39 @@ body {
   transform: translateY(-50%);
   width: 2px;
   height: 27px;
+}
+.perguntasFrequentes .gridPerguntaContainer .pergunta.active .iconePLus {
+  display: block;
+  margin-right: 10px;
+  position: relative;
+  transform: rotateZ(45deg);
+  transition: 0.3s;
+}
+.perguntasFrequentes .gridPerguntaContainer .resposta {
+  padding: 0 30px;
+  height: 0px;
+  padding: 0 30px;
+  overflow-y: hidden;
+  margin: 2px auto 5px auto;
+  background-color: #303030;
+  transition: 0.3s;
+}
+.perguntasFrequentes .gridPerguntaContainer .resposta p {
+  font-size: 26px;
+  line-height: 30px;
+}
+.perguntasFrequentes .gridPerguntaContainer .resposta p + p {
+  margin-top: 30px;
+}
+.perguntasFrequentes .gridPerguntaContainer .resposta.active {
+  height: auto;
+  padding: 35px 30px;
+  transition: 0.3s;
+}
+.perguntasFrequentes > p {
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .perguntasFrequentes form {
   display: block;

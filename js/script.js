@@ -1,9 +1,16 @@
-const perguntas = document.querySelectorAll('.pergunta')
+const perguntasBtns = document.querySelectorAll('.pergunta')
 
-perguntas.forEach(pergunta => {
+perguntasBtns.forEach(pergunta => {
   pergunta.addEventListener('click', handleClick)
 })
 
 function handleClick(e) {
-  console.log(e.target)
+  const target = e.target
+  const next = target.nextElementSibling
+  target.classList.toggle('active')
+  if(target.classList.contains('active')) {
+    next.classList.add('active')
+  } else {
+    next.classList.remove('active')
+  }
 }
