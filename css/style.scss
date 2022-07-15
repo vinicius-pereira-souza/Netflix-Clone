@@ -138,7 +138,7 @@ body {
         }
       }
   
-      #email:focus + .placeholderAnimation {
+      .placeholderAnimation.active {
         font-size: 13px;
         font-weight: 700;
         top: 12px;

@@ -21,19 +21,6 @@ function validarInput(e) {
   }
 }
 
-// animação do placeholder
-
-// const inputs = document.querySelectorAll('input')
-
-// inputs.forEach(input => {
-//   input.addEventListener('click', handleValidacaoInput)
-// })
-
-// function handleValidacaoInput(e) {
-//   e.preventDefault()
-
-// }
-
 // Perguntas Frequentes
 
 const perguntasBtns = document.querySelectorAll('.pergunta')

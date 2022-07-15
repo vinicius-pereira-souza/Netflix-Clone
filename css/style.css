@@ -124,7 +124,7 @@ body {
 .header .formContainer form #email.active:focus {
   border: none;
 }
-.header .formContainer form #email:focus + .placeholderAnimation {
+.header .formContainer form .placeholderAnimation.active {
   font-size: 13px;
   font-weight: 700;
   top: 12px;
