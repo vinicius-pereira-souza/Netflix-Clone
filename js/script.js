@@ -1,3 +1,29 @@
+// animação placeholder
+
+const inputs = document.querySelectorAll('input')
+
+inputs.forEach((input) => {
+  input.addEventListener('click', animarPlaceholder)
+})
+
+inputs.forEach((input) => {
+  input.addEventListener('keyup', finalizarAnimacao)
+})
+
+function animarPlaceholder(e) {
+  console.log(e.type)
+  const placeholder = e.target.nextElementSibling
+  placeholder.classList.add('active')
+}
+
+function finalizarAnimacao(e) {
+  console.log(e.type)
+  const placeholder = e.target.nextElementSibling
+  if(e.target.value == '' ) {
+    placeholder.classList.remove('active')
+  }
+}
+
 // Validação dos inputs
 
 const btns = document.querySelectorAll('button[type="submit"]')
