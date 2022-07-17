@@ -10,7 +10,7 @@ class Form {
   }
 
   finalizarAnimacao = (e) => {
-    if(e.target.value === '') {
+    if(!e.target.value) {
       e.target.nextElementSibling.classList.remove('active')
     }
 
@@ -57,4 +57,5 @@ class Form {
     })
   }
 }
-const formulario = new Form()
+
+export default Form
