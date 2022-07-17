@@ -1,67 +1,74 @@
-// animação placeholder
+// // animação placeholder
+// const inputs = document.querySelectorAll('input')
 
-const inputs = document.querySelectorAll('input')
+// const events = ['click', 'keyup']
+// const functions = ['animarPlaceholder', 'finalizarAnimacao']
 
-inputs.forEach((input) => {
-  input.addEventListener('click', animarPlaceholder)
-})
+// // inputs.forEach((input, i) => {
+// //   // input.addEventListener(`${events[i]}`, [functions[i]])
+// //   input.addEventListener(events[i], functions[i])
+// // })
 
-inputs.forEach((input) => {
-  input.addEventListener('keyup', finalizarAnimacao)
-})
+// functions.forEach((funcao, i) => {
+//   inputs[i].addEventListener(events[i], [funcao])
+// })
 
-function animarPlaceholder(e) {
-  console.log(e.type)
-  const placeholder = e.target.nextElementSibling
-  placeholder.classList.add('active')
-}
+// // inputs.forEach((input) => {
+// //   input.addEventListener('keyup', finalizarAnimacao)
+// // })
 
-function finalizarAnimacao(e) {
-  console.log(e.type)
-  const placeholder = e.target.nextElementSibling
-  if(e.target.value == '' ) {
-    placeholder.classList.remove('active')
-  }
-}
+// function animarPlaceholder(e) {
+//   console.log(e.type)
+//   const placeholder = e.target.nextElementSibling
+//   placeholder.classList.add('active')
+// }
 
-// Validação dos inputs
+// function finalizarAnimacao(e) {
+//   console.log(e.type)
+//   const placeholder = e.target.nextElementSibling
+//   if(e.target.value == '' ) {
+//     placeholder.classList.remove('active')
+//   }
+// }
 
-const btns = document.querySelectorAll('button[type="submit"]')
+// // Validação dos inputs
 
-btns.forEach(btn => {
-  btn.addEventListener('click', validarInput)
-})
+// const btns = document.querySelectorAll('button[type="submit"]')
 
-function validarInput(e) {
-  e.preventDefault()
-  const input = e.target.parentNode.querySelector
-  ('input')
-  const err = e.target.parentNode.nextElementSibling
+// btns.forEach(btn => {
+//   btn.addEventListener('click', validarInput)
+// })
 
-  if(!input.checkValidity()) {
-    const err = e.target.parentNode.nextElementSibling
-    err.classList.add('err')
-  } else {
-    err.classList.remove('err')
-    input.value = ''
-  }
-}
+// function validarInput(e) {
+//   e.preventDefault()
+//   const input = e.target.parentNode.querySelector
+//   ('input')
+//   const err = e.target.parentNode.nextElementSibling
 
-// Perguntas Frequentes
+//   if(!input.checkValidity()) {
+//     const err = e.target.parentNode.nextElementSibling
+//     err.classList.add('err')
+//   } else {
+//     err.classList.remove('err')
+//     input.value = ''
+//   }
+// }
 
-const perguntasBtns = document.querySelectorAll('.pergunta')
+// // Perguntas Frequentes
 
-perguntasBtns.forEach(pergunta => {
-  pergunta.addEventListener('click', handleClick)
-})
+// const perguntasBtns = document.querySelectorAll('.pergunta')
 
-function handleClick(e) {
-  const target = e.target
-  const next = target.nextElementSibling
-  target.classList.toggle('active')
-  if(target.classList.contains('active')) {
-    next.classList.add('active')
-  } else {
-    next.classList.remove('active')
-  }
-}
+// perguntasBtns.forEach(pergunta => {
+//   pergunta.addEventListener('click', handleClick)
+// })
+
+// function handleClick(e) {
+//   const target = e.target
+//   const next = target.nextElementSibling
+//   target.classList.toggle('active')
+//   if(target.classList.contains('active')) {
+//     next.classList.add('active')
+//   } else {
+//     next.classList.remove('active')
+//   }
+// }
