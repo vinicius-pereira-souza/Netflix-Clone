@@ -1,67 +1,68 @@
-class Form {
+class Form{
   constructor() {
     this.inputs = document.querySelectorAll('input')
     this.btns = document.querySelectorAll('button[type="submit"]')
-    this.addEventos()
+    this.body = document.body
+    this.addEventos(this.inputs)
   }
 
-  animarPlaceholder = (e) => {
-    e.target.nextElementSibling.classList.add('active')
+  iniciarAnimacao = (e) => {
+    const inputContainer = e.target.parentNode
+    inputContainer.classList.add('active')
   }
 
-  finalizarAnimacao = (e) => {
-    if(!e.target.value) {
-      e.target.nextElementSibling.classList.remove('active')
+  encerrarAnimacao = (e) => {
+    const elementoClicado = e.target.parentNode
+    const containerInput = document.querySelector('.paddingPlaceholder')
+    const input = containerInput.querySelector('input')
+
+    if(elementoClicado !== containerInput && input.value == '') {
+      containerInput.classList.remove('active')
     }
+  }
 
+  checarValorInput = (e) => {
+    const msg = e.target.parentNode.parentNode.querySelector('label')
     if(!e.target.value.endsWith('@gmail.com')) {
-      const msg = e.target.parentNode.nextElementSibling
-      msg.innerText = 'Insira um email válido.'
+      msg.innerHTML = 'Insira um email válido.'
       msg.classList.add('err')
-    }
-
-    e.target.addEventListener('keyup', this.validarValor)
-  }
-
-  validarValor = (e) => {
-    if(e.target.value === '') {
-      const msg = e.target.parentNode.nextElementSibling
-      msg.innerText = 'O email é obrigatório.'
-      msg.classList.add('err')
-      e.target.nextElementSibling.classList.remove('active')
-    } else if(e.target.value.endsWith('@gmail.com')) {
-      const msg = e.target.parentNode.nextElementSibling
-      msg.classList.remove('err')
     }
   }
 
-  handleSubmit = (e) => {
+  validarValorInput = (e) => {
+    const msg = e.target.parentNode.parentNode.querySelector('label')
+    if(e.target.value == '') {
+      msg.innerHTML = 'O email é obrigatório.'
+      msg.classList.add('err')
+    } 
+  }
+
+  enviarValorInput = (e) => {
     e.preventDefault()
     const input = e.target.parentNode.querySelector('input')
-    if(input.value.endsWith('@gmail.com')) {
-      input.value = ''
-    } else if(input.value == '') {
-      const msg = input.parentNode.nextElementSibling
-      const placeholder = input.nextElementSibling
-      msg.innerText = 'O email é obrigatório.'
-      msg.classList.add('err')
-      placeholder.classList.add('active')
-    }
-    // input.nextElementSibling.classList.remove('active')
+    const msg = e.target.parentNode.querySelector('label')
 
+    if(input.value.endsWith('@gmail.com')) {
+      msg.classList.remove('err')
+      input.value = ''
+    }
   }
 
-  addEventos = () => {
-    this.inputs.forEach(input => {
-      input.addEventListener('click', this.animarPlaceholder)
+  addEventos = (inputs) => {
+    inputs.forEach(input => {
+      input.addEventListener('click', this.iniciarAnimacao)
     })
-
-    this.inputs.forEach(input => {
-      input.addEventListener('change', this.finalizarAnimacao)
+    inputs.forEach(input => {
+      input.addEventListener('change', this.checarValorInput)
     })
-
+    inputs.forEach(input => {
+      input.addEventListener('keyup', this.validarValorInput)
+    })
+    inputs.forEach(input => {
+      input.parentNode.parentNode.parentNode.addEventListener('click', this.encerrarAnimacao)
+    })
     this.btns.forEach(btn => {
-      btn.addEventListener('click', this.handleSubmit)
+      btn.addEventListener('click', this.enviarValorInput)
     })
   }
 }
