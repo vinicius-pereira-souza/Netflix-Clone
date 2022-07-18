@@ -1,44 +1,69 @@
 class Form{
   constructor() {
-    this.form = document.querySelectorAll('form')
+    this.inputs = document.querySelectorAll('input')
     this.btns = document.querySelectorAll('button[type="submit"]')
     this.body = document.body
-    this.addEventos(this.form)
+    this.addEventos(this.inputs)
   }
 
   iniciarAnimacao = (e) => {
+    const inputContainer = e.target.parentNode
+    inputContainer.classList.add('active')
+  }
+
+  encerrarAnimacao = (e) => {
+    const elementoClicado = e.target.parentNode
+    const containerInput = document.querySelector('.paddingPlaceholder')
+    const input = containerInput.querySelector('input')
+
+    if(elementoClicado !== containerInput && input.value == '') {
+      containerInput.classList.remove('active')
+    }
+  }
+
+  checarValorInput = (e) => {
+    const msg = e.target.parentNode.parentNode.querySelector('label')
+    if(!e.target.value.endsWith('@gmail.com')) {
+      msg.innerHTML = 'Insira um email válido.'
+      msg.classList.add('err')
+    }
+  }
+
+  validarValorInput = (e) => {
+    const msg = e.target.parentNode.parentNode.querySelector('label')
+    if(e.target.value == '') {
+      msg.innerHTML = 'O email é obrigatório.'
+      msg.classList.add('err')
+    } 
+  }
+
+  enviarValorInput = (e) => {
+    e.preventDefault()
     const input = e.target.parentNode.querySelector('input')
-    this.placeholder = input.parentNode.parentNode.querySelector('.placeholderAnimation')
-    if(e.target == input) {
-      input.classList.add('clicado')
-      this.placeholder.classList.add('active')
+    const msg = e.target.parentNode.querySelector('label')
+
+    if(input.value.endsWith('@gmail.com')) {
+      msg.classList.remove('err')
+      input.value = ''
     }
   }
 
-  handleClick = (e) => {
-    const placeholder = document.body.querySelector('.placeholderAnimation')
-    const input = document.body.querySelector('.clicado')
-
-    if(e.target !== input) {
-      placeholder.classList.remove("active")
-    } else {
-      placeholder.classList.add("active")
-    }
-  }
-  
- 
-  
-  addEventos = (arrform) => {
-    arrform.forEach(form => {
-      form.addEventListener('click', this.iniciarAnimacao)
+  addEventos = (inputs) => {
+    inputs.forEach(input => {
+      input.addEventListener('click', this.iniciarAnimacao)
     })
-    this.body.addEventListener('click', this.handleClick)
-    // arrform.forEach(form => {
-    //   form.addEventListener('change', this.finalizarAnimacaoValidacao)
-    // })
-    // arrform.forEach(form => {
-    //   form.addEventListener('keyup', this.validarValorInput)
-    // })
+    inputs.forEach(input => {
+      input.addEventListener('change', this.checarValorInput)
+    })
+    inputs.forEach(input => {
+      input.addEventListener('keyup', this.validarValorInput)
+    })
+    inputs.forEach(input => {
+      input.parentNode.parentNode.parentNode.addEventListener('click', this.encerrarAnimacao)
+    })
+    this.btns.forEach(btn => {
+      btn.addEventListener('click', this.enviarValorInput)
+    })
   }
 }
 

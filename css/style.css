@@ -149,6 +149,17 @@ body {
   top: 15px;
   transition: 0.3s;
 }
+.header form .paddingPlaceholder.active input:focus {
+  border: none;
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+.header form .paddingPlaceholder.active .placeholderAnimation {
+  font-size: 13px;
+  font-weight: 400;
+  top: 15px;
+  transition: 0.3s;
+}
 .header form label {
   grid-area: msg;
   display: none;
