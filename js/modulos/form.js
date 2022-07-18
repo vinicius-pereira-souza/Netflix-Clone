@@ -1,68 +1,44 @@
-class Form {
+class Form{
   constructor() {
-    this.inputs = document.querySelectorAll('input')
+    this.form = document.querySelectorAll('form')
     this.btns = document.querySelectorAll('button[type="submit"]')
-    this.addEventos()
+    this.body = document.body
+    this.addEventos(this.form)
   }
 
-  animarPlaceholder = (e) => {
-    e.target.nextElementSibling.classList.add('active')
-  }
-
-  finalizarAnimacao = (e) => {
-    if(!e.target.value) {
-      e.target.nextElementSibling.classList.remove('active')
-    }
-
-    if(!e.target.value.endsWith('@gmail.com')) {
-      const msg = e.target.parentNode.nextElementSibling
-      msg.innerText = 'Insira um email válido.'
-      msg.classList.add('err')
-    }
-
-    e.target.addEventListener('keyup', this.validarValor)
-  }
-
-  validarValor = (e) => {
-    if(e.target.value === '') {
-      const msg = e.target.parentNode.nextElementSibling
-      msg.innerText = 'O email é obrigatório.'
-      msg.classList.add('err')
-      e.target.nextElementSibling.classList.remove('active')
-    } else if(e.target.value.endsWith('@gmail.com')) {
-      const msg = e.target.parentNode.nextElementSibling
-      msg.classList.remove('err')
-    }
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault()
+  iniciarAnimacao = (e) => {
     const input = e.target.parentNode.querySelector('input')
-    if(input.value.endsWith('@gmail.com')) {
-      input.value = ''
-    } else if(input.value == '') {
-      const msg = input.parentNode.nextElementSibling
-      const placeholder = input.nextElementSibling
-      msg.innerText = 'O email é obrigatório.'
-      msg.classList.add('err')
-      placeholder.classList.add('active')
+    this.placeholder = input.parentNode.parentNode.querySelector('.placeholderAnimation')
+    if(e.target == input) {
+      input.classList.add('clicado')
+      this.placeholder.classList.add('active')
     }
-    // input.nextElementSibling.classList.remove('active')
-
   }
 
-  addEventos = () => {
-    this.inputs.forEach(input => {
-      input.addEventListener('click', this.animarPlaceholder)
-    })
+  handleClick = (e) => {
+    const placeholder = document.body.querySelector('.placeholderAnimation')
+    const input = document.body.querySelector('.clicado')
 
-    this.inputs.forEach(input => {
-      input.addEventListener('change', this.finalizarAnimacao)
+    if(e.target !== input) {
+      placeholder.classList.remove("active")
+    } else {
+      placeholder.classList.add("active")
+    }
+  }
+  
+ 
+  
+  addEventos = (arrform) => {
+    arrform.forEach(form => {
+      form.addEventListener('click', this.iniciarAnimacao)
     })
-
-    this.btns.forEach(btn => {
-      btn.addEventListener('click', this.handleSubmit)
-    })
+    this.body.addEventListener('click', this.handleClick)
+    // arrform.forEach(form => {
+    //   form.addEventListener('change', this.finalizarAnimacaoValidacao)
+    // })
+    // arrform.forEach(form => {
+    //   form.addEventListener('keyup', this.validarValorInput)
+    // })
   }
 }
 

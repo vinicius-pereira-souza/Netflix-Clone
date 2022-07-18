@@ -107,40 +107,60 @@ body {
   font-size: 18px;
   font-weight: 400;
 }
-.header .formContainer {
+.header form {
   max-width: 635px;
   margin: 25px auto 0 auto;
-}
-.header .formContainer form {
-  width: 100%;
-  position: relative;
   display: grid;
-  grid-template-columns: minmax(450px, 1fr) minmax(auto, 185px);
+  grid-template-columns: 1fr minmax(auto, 185px);
+  grid-template-rows: 60px auto;
+  grid-template-areas: "input btn" "msg msg";
 }
-.header .formContainer form #email {
-  height: 60px;
+.header form .paddingPlaceholder {
+  grid-area: input;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.header form .paddingPlaceholder input {
+  width: 100%;
+  height: 45px;
+  border: none;
   padding-left: 15px;
 }
-.header .formContainer form #email.active:focus {
+.header form .paddingPlaceholder input:focus {
   border: none;
+  box-shadow: 0 0 0 0;
+  outline: 0;
 }
-.header .formContainer form .placeholderAnimation.active {
-  font-size: 13px;
-  font-weight: 700;
-  top: 12px;
-  transition: 0.3s;
-}
-.header .formContainer form .placeholderAnimation {
+.header form .paddingPlaceholder .placeholderAnimation {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  position: absolute;
   display: block;
   color: #8C8C8C;
   left: 15px;
   transition: 0.3s;
 }
-.header .formContainer form button {
-  height: 60px;
+.header form .paddingPlaceholder .placeholderAnimation.active {
+  font-size: 13px;
+  font-weight: 400;
+  top: 15px;
+  transition: 0.3s;
+}
+.header form label {
+  grid-area: msg;
+  display: none;
+  font-size: 13px;
+  color: #E50914;
+  margin-top: 5px;
+}
+.header form label.err {
+  display: block;
+}
+.header form button {
+  grid-area: btn;
   border: none;
   padding-left: 20px;
   background-color: #E50914;
@@ -151,7 +171,7 @@ body {
   position: relative;
   transition: 0.3s;
 }
-.header .formContainer form button::after, .header .formContainer form button::before {
+.header form button::after, .header form button::before {
   content: "";
   display: block;
   width: 18px;
@@ -160,27 +180,13 @@ body {
   position: absolute;
   right: 20px;
 }
-.header .formContainer form button::after {
+.header form button::after {
   top: 24px;
   transform: rotate(40deg);
 }
-.header .formContainer form button::before {
+.header form button::before {
   top: 35px;
   transform: rotate(-40deg);
-}
-.header .formContainer form button:hover {
-  cursor: pointer;
-  background-color: #F40612;
-  transition: 0.3s;
-}
-.header .formContainer > p {
-  display: none;
-  font-size: 13px;
-  color: #E50914;
-  margin-top: 5px;
-}
-.header .formContainer > p.err {
-  display: block;
 }
 
 .sectionContainer {
