@@ -1,5 +1,5 @@
-import Form from './form.js'
-import Grow from './growQuestion.js'
+import Form from './modulos/form.js'
+import Grow from './modulos/growQuestion.js'
 
 const newForm = new Form()
 newForm.init

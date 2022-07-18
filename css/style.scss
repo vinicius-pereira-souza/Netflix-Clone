@@ -132,7 +132,7 @@ body {
       #email {
         height: 60px;
         padding-left: 15px;
-
+        position: relative;
         &.active:focus {
           border: none;
         }

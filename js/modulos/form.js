@@ -25,10 +25,10 @@ class Form {
 
   validarValor = (e) => {
     if(e.target.value === '') {
-      e.target.nextElementSibling.classList.remove('active')
       const msg = e.target.parentNode.nextElementSibling
       msg.innerText = 'O email é obrigatório.'
       msg.classList.add('err')
+      e.target.nextElementSibling.classList.remove('active')
     } else if(e.target.value.endsWith('@gmail.com')) {
       const msg = e.target.parentNode.nextElementSibling
       msg.classList.remove('err')
@@ -40,7 +40,15 @@ class Form {
     const input = e.target.parentNode.querySelector('input')
     if(input.value.endsWith('@gmail.com')) {
       input.value = ''
+    } else if(input.value == '') {
+      const msg = input.parentNode.nextElementSibling
+      const placeholder = input.nextElementSibling
+      msg.innerText = 'O email é obrigatório.'
+      msg.classList.add('err')
+      placeholder.classList.add('active')
     }
+    // input.nextElementSibling.classList.remove('active')
+
   }
 
   addEventos = () => {
