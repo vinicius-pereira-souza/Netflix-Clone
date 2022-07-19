@@ -663,20 +663,15 @@ body {
     top: 81px;
     left: 70px;
   }
-  .assista.sectionContainer > .containerFlex .title {
-    max-width: 530px;
+  .section3 .containerFlex .imgWithVideo {
+    max-width: 610px !important;
+    display: block;
   }
-  .assista.sectionContainer > .containerFlex .imgWithVideo {
-    width: 500px !important;
-    position: relative;
-    padding-top: 40px;
+  .section3 .containerFlex .imgWithVideo img {
+    width: 1000px;
   }
-  .assista.sectionContainer > .containerFlex .imgWithVideo video {
-    max-width: 325px;
-    height: 220px;
-    position: absolute;
-    top: 60px;
-    left: 100px;
+  .section3 .containerFlex .imgWithVideo video {
+    width: 500px;
   }
   .criePerfil .containerFlex {
     flex-direction: column-reverse;

@@ -783,25 +783,24 @@ body {
       }
     }
   }
-  .assista.sectionContainer {
-    & > .containerFlex {
-      .title {
-        max-width: $maxWidthContainer;
-      }
+
+  .section3 {
+    .containerFlex {
       .imgWithVideo {
-        width: 500px !important;
-        position: relative;
-        padding-top: 40px;
+        max-width: 610px !important;
+        display: block;
+        img {
+          width: 1000px;
+        }
         video {
-          max-width: 325px;
-          height: 220px;
-          position: absolute;
-          top: 60px;
-          left: 100px;
+          width: 500px;
         }
       }
     }
+
+
   }
+
   .criePerfil {
     .containerFlex {
       flex-direction: column-reverse;
