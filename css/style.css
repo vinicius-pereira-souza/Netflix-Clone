@@ -582,4 +582,16 @@ body {
     display: block;
     max-width: 125px;
   }
+  .assista > .containerFlex .title {
+    max-width: 530px;
+  }
+  .assista > .containerFlex .imgWithVideo {
+    max-width: 455px;
+    padding-top: 40px;
+  }
+  .assista > .containerFlex .imgWithVideo video {
+    max-width: 267px;
+    top: 40px;
+    left: 82px;
+  }
 }/*# sourceMappingURL=style.css.map */
