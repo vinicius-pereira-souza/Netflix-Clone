@@ -655,5 +655,23 @@ body {
       }
     }
   }
-}
+  }
+  .baixeSerie {
+    .img {
+      & > img {
+        max-width: 400px;
+      }
+      .subFlex {
+        width: 280px;
+        bottom: 25px;
+  
+        .titleDownload {  
+          span {
+            display: block;
+            max-width: 125px;
+          }
+        }
+      }
+    }
+  }
 }

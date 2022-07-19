@@ -571,4 +571,15 @@ body {
     top: 45px;
     left: 57px;
   }
+  .baixeSerie .img > img {
+    max-width: 400px;
+  }
+  .baixeSerie .img .subFlex {
+    width: 280px;
+    bottom: 25px;
+  }
+  .baixeSerie .img .subFlex .titleDownload span {
+    display: block;
+    max-width: 125px;
+  }
 }/*# sourceMappingURL=style.css.map */
