@@ -601,4 +601,7 @@ body {
   .criePerfil .containerFlex .title {
     max-width: 450px;
   }
+  .perguntasFrequentes > h1 {
+    font-size: 48px;
+  }
 }/*# sourceMappingURL=style.css.map */

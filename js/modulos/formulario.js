@@ -3,7 +3,7 @@ class Formulario {
     this.formulario = document.querySelector(`${form}[name="${nome}"]`)
     this.containerDoFormulario = this.formulario.parentNode
     this.input = this.formulario.querySelector('input')
-    this.btnSibmit = this.formulario.querySelector('button')
+    this.btnSubmit = this.formulario.querySelector('button')
     this.adicionarEventos()
   }
 
@@ -57,7 +57,7 @@ class Formulario {
     this.input.addEventListener('change', this.validarValorInput)
     this.input.addEventListener('keyup', this.validarValorInput)
     this.containerDoFormulario.addEventListener('click', this.encerrarAnimacao)
-    this.btnSibmit.addEventListener('click', this.enviarValor)
+    this.btnSubmit.addEventListener('click', this.enviarValor)
   }
 
 }
