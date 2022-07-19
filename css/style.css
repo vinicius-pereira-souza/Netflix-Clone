@@ -663,4 +663,7 @@ body {
     top: 81px;
     left: 70px;
   }
+  .footer .containerFooter {
+    max-width: 730px;
+  }
 }/*# sourceMappingURL=style.css.map */
