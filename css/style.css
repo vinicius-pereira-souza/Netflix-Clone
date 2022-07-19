@@ -547,4 +547,28 @@ body {
 .footer .containerFooter select option {
   border: none;
   background-color: #000;
+}
+
+@media (max-width: 1024px) {
+  .sectionContainer {
+    padding: 20px 30px 50px 45px;
+  }
+  .sectionContainer .containerFlex .title {
+    max-width: 415px;
+  }
+  .sectionContainer .containerFlex .title h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+  }
+  .sectionContainer .containerFlex .title p {
+    font-size: 25px;
+  }
+  .sectionContainer .containerFlex .imgWithVideo img {
+    max-width: 435px;
+  }
+  .sectionContainer .containerFlex .imgWithVideo video {
+    max-width: 317px;
+    top: 45px;
+    left: 57px;
+  }
 }/*# sourceMappingURL=style.css.map */

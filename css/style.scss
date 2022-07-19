@@ -550,7 +550,6 @@ body {
   }
 }
 
-
 .footer {
   margin-bottom: 0;
   color: $gray_content;
@@ -624,4 +623,37 @@ body {
       }
     }
   }
+}
+
+@media (max-width: 1024px) {
+  .sectionContainer {
+  padding: 20px 30px 50px 45px;
+
+  .containerFlex {
+
+    .title {
+      max-width: 415px;
+      h1 {
+        font-size: 46px;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 25px;
+      }
+    }
+
+    .imgWithVideo {
+      img {
+        max-width: 435px;
+      }
+  
+      video {
+        max-width: 317px;
+        top: 45px;
+        left: 57px;
+      }
+    }
+  }
+}
 }
