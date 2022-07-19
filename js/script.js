@@ -1,8 +1,11 @@
-import Form from './modulos/form.js'
 import Grow from './modulos/growQuestion.js'
+import Formulario from './modulos/formulario.js'
 
-const newForm = new Form()
-newForm.init
-
-const newGrow = new Grow
+const newGrow = new Grow()
 newGrow.init
+
+const form1 = new Formulario('form', 'formHeader')
+form1.init
+
+const form2 = new Formulario('form', 'formFooter')
+form2.init
