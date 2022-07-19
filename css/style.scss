@@ -706,4 +706,79 @@ body {
       font-size: 48px;
     }
   }
+
+  .footer {
+    margin-bottom: 0;
+    color: $gray_content;
+    padding-top: 60px;
+    .containerFooter {
+      max-width: 830px;
+      margin: 0 auto;
+  
+      p {
+        font-size: 15px;
+      }
+  
+      .flexFooter {
+        padding-top: 30px ;
+        @include flexCenterBetween;
+  
+        ul {
+          list-style: none;
+  
+          li {
+            font-size: 13px;
+            margin-bottom: 13px;
+  
+            &:hover {
+              cursor: pointer;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+  
+      .selectContainer {
+        position: relative;
+        margin: 20px 0;
+        &::after {
+          content: url('../img/globo\ icone.svg');
+          display: block;
+          position: absolute;
+          @include absoluteAlignX;
+          left: 13px;
+        }
+  
+        &::before {
+          content: '';
+          display: block;
+          width: 0px;
+          height: 0px;
+          border: 6px solid $gray_content;
+          border-bottom-color: transparent;
+          border-right-color: transparent;
+          border-left-color: transparent;
+          position: absolute;
+          top: 24px;
+          left: 127px;
+        }
+      }
+  
+      select {
+        font-size: 16px;
+        padding: 20px 40px;
+        background-color: transparent;
+        border: 1px solid $gray_content;
+        border-radius: 2px;
+        color: $gray_content;
+        -webkit-appearance: none;
+        position: relative;
+  
+        option {
+          border: none;
+          background-color: $black;
+        }
+      }
+    }
+  }
 }

@@ -604,4 +604,73 @@ body {
   .perguntasFrequentes > h1 {
     font-size: 48px;
   }
+  .footer {
+    margin-bottom: 0;
+    color: #737373;
+    padding-top: 60px;
+  }
+  .footer .containerFooter {
+    max-width: 830px;
+    margin: 0 auto;
+  }
+  .footer .containerFooter p {
+    font-size: 15px;
+  }
+  .footer .containerFooter .flexFooter {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer .containerFooter .flexFooter ul {
+    list-style: none;
+  }
+  .footer .containerFooter .flexFooter ul li {
+    font-size: 13px;
+    margin-bottom: 13px;
+  }
+  .footer .containerFooter .flexFooter ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .footer .containerFooter .selectContainer {
+    position: relative;
+    margin: 20px 0;
+  }
+  .footer .containerFooter .selectContainer::after {
+    content: url("../img/globo icone.svg");
+    display: block;
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 13px;
+  }
+  .footer .containerFooter .selectContainer::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 6px solid #737373;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    top: 24px;
+    left: 127px;
+  }
+  .footer .containerFooter select {
+    font-size: 16px;
+    padding: 20px 40px;
+    background-color: transparent;
+    border: 1px solid #737373;
+    border-radius: 2px;
+    color: #737373;
+    -webkit-appearance: none;
+    position: relative;
+  }
+  .footer .containerFooter select option {
+    border: none;
+    background-color: #000;
+  }
 }/*# sourceMappingURL=style.css.map */
