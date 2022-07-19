@@ -783,6 +783,34 @@ body {
       }
     }
   }
+  .assista.sectionContainer {
+    & > .containerFlex {
+      .title {
+        max-width: $maxWidthContainer;
+      }
+      .imgWithVideo {
+        width: 500px !important;
+        position: relative;
+        padding-top: 40px;
+        video {
+          max-width: 325px;
+          height: 220px;
+          position: absolute;
+          top: 60px;
+          left: 100px;
+        }
+      }
+    }
+  }
+  .criePerfil {
+    .containerFlex {
+      flex-direction: column-reverse;
+    }
+    img {
+      width: 610px !important;
+    }
+
+  }
   .perguntasFrequentes.sectionContainer {
     padding: 20px 0 50px 0;
 
