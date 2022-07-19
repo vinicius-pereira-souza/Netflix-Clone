@@ -634,4 +634,33 @@ body {
   .header form button::before {
     top: 23px;
   }
+  .sectionContainer {
+    margin: 8px 0;
+    padding: 65px 0 50px 0;
+  }
+  .sectionContainer .containerFlex {
+    flex-direction: column;
+    max-width: 800px;
+  }
+  .sectionContainer .containerFlex .title {
+    max-width: 100%;
+    text-align: center;
+  }
+  .sectionContainer .containerFlex .title h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .sectionContainer .containerFlex .title p {
+    font-size: 19px;
+  }
+  .sectionContainer .containerFlex .imgWithVideo img {
+    max-width: 600px;
+  }
+  .sectionContainer .containerFlex .imgWithVideo video {
+    max-width: 385px;
+    height: 220px;
+    position: absolute;
+    top: 81px;
+    left: 70px;
+  }
 }/*# sourceMappingURL=style.css.map */

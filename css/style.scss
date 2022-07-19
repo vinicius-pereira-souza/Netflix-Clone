@@ -747,6 +747,41 @@ body {
       }
     }
   }
+  .sectionContainer {
+    margin: 8px 0;
+    padding: 65px 0 50px 0;
   
+    .containerFlex {
+      flex-direction: column;
+      max-width: 800px;
+  
+      .title {
+        max-width: 100%;
+        text-align: center;
+        h1 {
+          font-size: 40px;
+          margin-bottom: 20px;
+        }
+    
+        p {
+          font-size: 19px;
+        }
+      }
+  
+      .imgWithVideo {
+        img {
+          max-width: 600px;
+        }
+    
+        video {
+          max-width: 385px;
+          height: 220px;
+          position: absolute;
+          top: 81px;
+          left: 70px;
+        }
+      }
+    }
+  }
   
 }
