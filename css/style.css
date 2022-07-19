@@ -582,9 +582,6 @@ body {
     display: block;
     max-width: 125px;
   }
-  .assista > .containerFlex .title {
-    max-width: 530px;
-  }
   .assista > .containerFlex .imgWithVideo {
     max-width: 455px;
     padding-top: 40px;
@@ -593,5 +590,15 @@ body {
     max-width: 267px;
     top: 40px;
     left: 82px;
+  }
+  .criePerfil .containerFlex {
+    max-width: 905px;
+    padding: 45px 0;
+  }
+  .criePerfil .containerFlex img {
+    width: 435px;
+  }
+  .criePerfil .containerFlex .title {
+    max-width: 450px;
   }
 }/*# sourceMappingURL=style.css.map */
