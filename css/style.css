@@ -562,4 +562,18 @@ body {
 .footer .containerFooter select option {
   border: none;
   background-color: #000;
+}
+
+@media (max-width: 1115px) {
+  .containerContainer {
+    grid-template-columns: 30px 1fr 30px;
+  }
+  .containerContainer .sectionGrid {
+    min-width: 1040px;
+  }
+  .containerContainer .sectionGrid video {
+    max-width: 356px;
+    top: 63px;
+    left: 65px;
+  }
 }/*# sourceMappingURL=style.css.map */

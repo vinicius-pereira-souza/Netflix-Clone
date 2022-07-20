@@ -643,3 +643,19 @@ body {
   }
 }
 
+@media(max-width: 1115px) {
+  .containerContainer {
+    grid-template-columns: 30px 1fr 30px;
+
+    .sectionGrid {
+      min-width: 1040px;
+  
+      video { 
+        max-width: 356px;
+        top: 63px;
+        left: 65px;
+      }
+    }
+  
+  }
+}
