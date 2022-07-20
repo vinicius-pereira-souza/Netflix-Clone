@@ -241,13 +241,12 @@ body {
   background-color: $black;
   margin: 8px 0;
   display: grid;
-  grid-template-columns: 90px 1fr 90px;
+  grid-template-columns: minmax(auto, 90px) 1fr minmax(auto, 90px) ;
   grid-template-areas: '. content .';
   
   .sectionGrid {
     grid-area: content;
-    max-width: 100%;
-    min-width: 1135px;
+    max-width: 1135px;
     margin: 0 auto;
     padding-bottom: 50px;
     display: grid;
@@ -645,17 +644,59 @@ body {
 
 @media(max-width: 1115px) {
   .containerContainer {
-    grid-template-columns: 30px 1fr 30px;
+    grid-template-columns: minmax(auto, 30px) 1fr minmax(auto, 30px);
 
     .sectionGrid {
-      min-width: 1040px;
+
+      .img {
+        video { 
+          max-width: 352px;
+          top: 60px;
+          left: 64px;
+        }
+      }
+    }
+  }
+  
+  .assistaQuandoquiser {
+  .sectionGrid {
+
+    .img {
+      video { 
+        max-width: 294px;
+        top: 10px;
+        left: 92px;
+      }
+    }
+  }
+  }
+}
+
+@media(max-width: 1050px) {
+  .containerContainer {
+    grid-template-columns: minmax(auto, 25px) 1fr minmax(auto, 25px);
+
+    .sectionGrid {
+      grid-template-columns: 1fr minmax(auto, 0) 1fr;
   
       video { 
-        max-width: 356px;
-        top: 63px;
-        left: 65px;
+        max-width: 360px;
+        top: 62px;
+        left: 64px;
       }
     }
   
+  }
+
+  .assistaQuandoquiser {
+    .sectionGrid {
+  
+      .img {
+        video { 
+          max-width: 300px;
+
+        }
+      }
+    }
   }
 }
