@@ -1,8 +1,14 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 body {
@@ -203,116 +209,124 @@ body {
   transform: rotate(-40deg);
 }
 
-.sectionContainer {
-  max-width: 100%;
-  margin: 8px 0;
-  padding: 20px 0 50px 0;
+.containerContainer {
   background-color: #000;
+  margin: 8px 0;
+  display: grid;
+  grid-template-columns: 90px 1fr 90px;
+  grid-template-areas: ". content .";
 }
-.sectionContainer .containerFlex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1130px;
+.containerContainer .sectionGrid {
+  grid-area: content;
+  max-width: 100%;
+  min-width: 1135px;
   margin: 0 auto;
+  padding-bottom: 50px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr minmax(auto, 60px) 1fr;
+  grid-template-areas: "title . img";
+  grid-template-rows: auto;
 }
-.sectionContainer .containerFlex .title h1 {
+.containerContainer .sectionGrid .title {
+  grid-area: title;
+}
+.containerContainer .sectionGrid .title h1 {
   font-size: 46px;
   margin-bottom: 20px;
 }
-.sectionContainer .containerFlex .title p {
+.containerContainer .sectionGrid .title p {
   font-size: 25px;
 }
-.sectionContainer .containerFlex .imgWithVideo {
-  max-width: 530px;
+.containerContainer .sectionGrid .img {
+  grid-area: img;
   position: relative;
 }
-.sectionContainer .containerFlex .imgWithVideo img {
-  max-width: 530px;
+.containerContainer .sectionGrid .img img {
   position: relative;
   z-index: 10;
 }
-.sectionContainer .containerFlex .imgWithVideo video {
-  max-width: 385px;
-  height: 220px;
+.containerContainer .sectionGrid .img video {
+  max-width: 406px;
+  height: 227px;
   position: absolute;
-  top: 81px;
-  left: 70px;
+  top: 86px;
+  left: 73px;
 }
 
-.baixeSerie .img {
-  position: relative;
+.baixeSéries .sectionGrid {
+  grid-template-areas: "img . title";
 }
-.baixeSerie .img .subFlex {
+.baixeSéries .sectionGrid .img {
+  padding: 20px;
+}
+.baixeSéries .sectionGrid .subFlex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   width: 335px;
   padding: 10px 12px;
   background-color: #000;
   border: 2px solid #222222;
   border-radius: 14px;
-  bottom: 25px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  z-index: 20;
 }
-.baixeSerie .img .subFlex img {
-  width: 50px;
+.baixeSéries .sectionGrid .subFlex .imgCapa {
+  max-width: 50px;
 }
-.baixeSerie .img .subFlex .titleDownload p {
+.baixeSéries .sectionGrid .subFlex .subTitle p {
   font-size: 15px;
   font-weight: 700;
   margin-left: 15px;
 }
-.baixeSerie .img .subFlex .titleDownload span {
+.baixeSéries .sectionGrid .subFlex .subTitle span {
   font-size: 14px;
   color: #0071eb;
   margin-left: 15px;
 }
-.baixeSerie .title {
-  max-width: 530px;
+.baixeSéries .sectionGrid .subFlex .icodeDeLoading {
+  max-width: 55px;
 }
 
-.assista > .containerFlex .title {
-  max-width: 530px;
+.assistaQuandoquiser {
+  padding-top: 70px;
 }
-.assista > .containerFlex .imgWithVideo {
-  max-width: 530px;
-  position: relative;
-  padding-top: 40px;
+.assistaQuandoquiser .sectionGrid .title {
+  padding-right: 50px;
 }
-.assista > .containerFlex .imgWithVideo video {
-  max-width: 325px;
-  height: 220px;
-  position: absolute;
-  top: 60px;
-  left: 100px;
+.assistaQuandoquiser .sectionGrid .img video {
+  max-width: 337px;
+  height: 228px;
+  top: 25px;
+  left: 105px;
 }
 
-.criePerfil {
-  padding: 70px 0;
+.criePerfis .sectionGrid {
+  grid-template-areas: "img . title";
+  padding-top: 60px;
 }
-.criePerfil img {
-  width: 512px;
-}
-.criePerfil .title {
-  max-width: 540px;
+.criePerfis .sectionGrid .img {
+  padding: 0 20px;
 }
 
-.perguntasFrequentes > h1 {
+.perguntasFrequentes {
+  margin: 8px 0;
+  padding: 75px 20px;
+  background-color: #000;
+}
+.perguntasFrequentes h1 {
+  margin-bottom: 50px;
   text-align: center;
   font-size: 50px;
-  margin-top: 75px;
 }
-.perguntasFrequentes .gridPerguntaContainer {
-  max-width: 820px;
+.perguntasFrequentes .perguntasContainer {
+  max-width: 815px;
   margin: 0 auto;
-  padding: 75px;
-  display: grid;
-  grid-template-columns: 1fr;
 }
-.perguntasFrequentes .gridPerguntaContainer .pergunta {
+.perguntasFrequentes .perguntasContainer .pergunta {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -326,38 +340,38 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #303030;
 }
-.perguntasFrequentes .gridPerguntaContainer .pergunta .iconePLus {
+.perguntasFrequentes .perguntasContainer .pergunta .iconePLus {
   display: block;
   margin-right: 10px;
   position: relative;
   transition: 0.3s;
 }
-.perguntasFrequentes .gridPerguntaContainer .pergunta .iconePLus::before, .perguntasFrequentes .gridPerguntaContainer .pergunta .iconePLus::after {
+.perguntasFrequentes .perguntasContainer .pergunta .iconePLus::before, .perguntasFrequentes .perguntasContainer .pergunta .iconePLus::after {
   content: "";
   background-color: #fff;
   position: absolute;
 }
-.perguntasFrequentes .gridPerguntaContainer .pergunta .iconePLus::before {
+.perguntasFrequentes .perguntasContainer .pergunta .iconePLus::before {
   width: 27px;
   height: 2px;
   top: 50%;
   transform: translateX(-50%);
 }
-.perguntasFrequentes .gridPerguntaContainer .pergunta .iconePLus::after {
+.perguntasFrequentes .perguntasContainer .pergunta .iconePLus::after {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 2px;
   height: 27px;
 }
-.perguntasFrequentes .gridPerguntaContainer .pergunta.active .iconePLus {
+.perguntasFrequentes .perguntasContainer .pergunta.active .iconePLus {
   display: block;
   margin-right: 10px;
   position: relative;
   transform: rotateZ(45deg);
   transition: 0.3s;
 }
-.perguntasFrequentes .gridPerguntaContainer .resposta {
+.perguntasFrequentes .perguntasContainer .resposta {
   padding: 0 30px;
   height: 0px;
   padding: 0 30px;
@@ -366,14 +380,14 @@ body {
   background-color: #303030;
   transition: 0.3s;
 }
-.perguntasFrequentes .gridPerguntaContainer .resposta p {
+.perguntasFrequentes .perguntasContainer .resposta p {
   font-size: 26px;
   line-height: 30px;
 }
-.perguntasFrequentes .gridPerguntaContainer .resposta p + p {
+.perguntasFrequentes .perguntasContainer .resposta p + p {
   margin-top: 30px;
 }
-.perguntasFrequentes .gridPerguntaContainer .resposta.active {
+.perguntasFrequentes .perguntasContainer .resposta.active {
   height: auto;
   padding: 35px 30px;
   transition: 0.3s;
@@ -381,7 +395,7 @@ body {
 .perguntasFrequentes > p {
   font-size: 19px;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 65px 0 20px 0;
 }
 .perguntasFrequentes form {
   max-width: 635px;
@@ -483,6 +497,7 @@ body {
   margin-bottom: 0;
   color: #737373;
   padding-top: 60px;
+  background-color: #000;
 }
 .footer .containerFooter {
   max-width: 830px;
@@ -547,206 +562,4 @@ body {
 .footer .containerFooter select option {
   border: none;
   background-color: #000;
-}
-
-@media (max-width: 1024px) {
-  .sectionContainer {
-    padding: 20px 30px 50px 45px;
-  }
-  .sectionContainer .containerFlex .title {
-    max-width: 415px;
-  }
-  .sectionContainer .containerFlex .title h1 {
-    font-size: 46px;
-    margin-bottom: 20px;
-  }
-  .sectionContainer .containerFlex .title p {
-    font-size: 25px;
-  }
-  .sectionContainer .containerFlex .imgWithVideo img {
-    max-width: 435px;
-  }
-  .sectionContainer .containerFlex .imgWithVideo video {
-    max-width: 317px;
-    top: 45px;
-    left: 57px;
-  }
-  .baixeSerie .img > img {
-    max-width: 400px;
-  }
-  .baixeSerie .img .subFlex {
-    width: 280px;
-    bottom: 25px;
-  }
-  .baixeSerie .img .subFlex .titleDownload span {
-    display: block;
-    max-width: 125px;
-  }
-  .assista > .containerFlex .imgWithVideo {
-    max-width: 455px;
-    padding-top: 40px;
-  }
-  .assista > .containerFlex .imgWithVideo video {
-    max-width: 267px;
-    top: 40px;
-    left: 82px;
-  }
-  .criePerfil .containerFlex {
-    max-width: 905px;
-    padding: 45px 0;
-  }
-  .criePerfil .containerFlex img {
-    width: 435px;
-  }
-  .criePerfil .containerFlex .title {
-    max-width: 450px;
-  }
-  .perguntasFrequentes > h1 {
-    font-size: 48px;
-  }
-  .footer select {
-    padding: 15px 40px;
-  }
-}
-@media (max-width: 950px) {
-  .header h3 {
-    max-width: 460px;
-    margin: 0 auto;
-    font-size: 23px;
-  }
-  .header form {
-    grid-template-columns: 1fr 115px 1fr;
-    grid-template-rows: 60px 20px 40px;
-    grid-template-areas: "input input input" "msg . ." ". btn .";
-  }
-  .header form button {
-    margin-top: 0px;
-    font-size: 16px;
-  }
-  .header form button::after, .header form button::before {
-    content: "";
-    width: 10px;
-    right: 12px;
-  }
-  .header form button::after {
-    top: 17px;
-  }
-  .header form button::before {
-    top: 23px;
-  }
-  .sectionContainer {
-    margin: 8px 0;
-    padding: 65px 0 50px 0;
-  }
-  .sectionContainer .containerFlex {
-    flex-direction: column;
-    max-width: 800px;
-  }
-  .sectionContainer .containerFlex .title {
-    max-width: 100%;
-    text-align: center;
-  }
-  .sectionContainer .containerFlex .title h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  .sectionContainer .containerFlex .title p {
-    font-size: 19px;
-  }
-  .sectionContainer .containerFlex .imgWithVideo img {
-    max-width: 600px;
-  }
-  .sectionContainer .containerFlex .imgWithVideo video {
-    max-width: 385px;
-    height: 220px;
-    position: absolute;
-    top: 81px;
-    left: 70px;
-  }
-  .section3 .containerFlex .imgWithVideo {
-    max-width: 610px !important;
-    display: block;
-  }
-  .section3 .containerFlex .imgWithVideo img {
-    width: 1000px;
-  }
-  .section3 .containerFlex .imgWithVideo video {
-    width: 500px;
-  }
-  .criePerfil .containerFlex {
-    flex-direction: column-reverse;
-  }
-  .criePerfil img {
-    width: 610px !important;
-  }
-  .perguntasFrequentes.sectionContainer {
-    padding: 20px 0 50px 0;
-  }
-  .perguntasFrequentes.sectionContainer > h1 {
-    font-size: 40px;
-    margin-top: 75px;
-  }
-  .perguntasFrequentes.sectionContainer .gridPerguntaContainer {
-    padding: 75px 50px 20px 50px;
-  }
-  .perguntasFrequentes.sectionContainer .gridPerguntaContainer .pergunta {
-    padding: 17px 30px;
-    font-size: 20px;
-  }
-  .perguntasFrequentes.sectionContainer .gridPerguntaContainer .pergunta .iconePLus::before {
-    width: 20px;
-  }
-  .perguntasFrequentes.sectionContainer .gridPerguntaContainer .pergunta .iconePLus::after {
-    height: 20px;
-  }
-  .perguntasFrequentes.sectionContainer .gridPerguntaContainer .resposta {
-    padding: 0 30px;
-    height: 0px;
-    padding: 0 30px;
-    overflow-y: hidden;
-    margin: 2px auto 5px auto;
-    background-color: #303030;
-    transition: 0.3s;
-  }
-  .perguntasFrequentes.sectionContainer .gridPerguntaContainer .resposta p {
-    font-size: 26px;
-    line-height: 30px;
-  }
-  .perguntasFrequentes.sectionContainer .gridPerguntaContainer .resposta p + p {
-    margin-top: 30px;
-  }
-  .perguntasFrequentes.sectionContainer .gridPerguntaContainer .resposta.active {
-    height: auto;
-    padding: 35px 30px;
-    transition: 0.3s;
-  }
-  .perguntasFrequentes.sectionContainer > p {
-    font-size: 23px;
-    max-width: 465px;
-    margin: 0 auto 20px auto;
-  }
-  .perguntasFrequentes.sectionContainer form {
-    max-width: 500px;
-    grid-template-columns: 1fr 115px 1fr;
-    grid-template-rows: 60px 20px 40px;
-    grid-template-areas: "input input input" "msg . ." ". btn .";
-  }
-  .perguntasFrequentes.sectionContainer form button {
-    margin-top: 0px;
-    font-size: 16px;
-  }
-  .perguntasFrequentes.sectionContainer form button::after, .perguntasFrequentes.sectionContainer form button::before {
-    content: "";
-    width: 10px;
-    right: 12px;
-  }
-  .perguntasFrequentes.sectionContainer form button::after {
-    top: 17px;
-  }
-  .perguntasFrequentes.sectionContainer form button::before {
-    top: 23px;
-  }
-  .footer .containerFooter {
-    max-width: 730px;
-  }
 }/*# sourceMappingURL=style.css.map */
