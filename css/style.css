@@ -642,9 +642,6 @@ body {
   .containerContainer .sectionGrid .img {
     margin: 0 auto;
   }
-  .containerContainer .sectionGrid .img img {
-    max-width: 600px;
-  }
   .containerContainer .sectionGrid .img video {
     max-width: 437px;
     height: 260px;
