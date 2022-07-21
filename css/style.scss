@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@import './_variaveisMixins.scss';
+@import url('./_variaveisMixins.scss');
 
 * {
   margin: 0;
@@ -834,7 +834,7 @@ body {
 @media(max-width: 750px) {
   .header {
     height: 770px;
-    
+
     h1 {
       max-width: 620px;
       font-size: 47px;
@@ -863,3 +863,177 @@ body {
   }
 }
   
+@media(max-width: 570px) {
+  .header {
+    padding: 30px 25px 0 25px;
+    height: 620px;
+
+    .flexHeader {
+      max-width: 1240px;
+      margin: 0 auto 158px auto;
+
+      .logo {
+        width: 95px;
+        display: block;
+      }
+
+      .flexSelectLogin {
+        column-gap: 10px;
+  
+        select {
+          padding: 6px 25px;
+        }
+  
+        a {
+          font-size: 14px;
+          padding: 7px 9px;
+        }
+      }
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  
+    h3 {
+      font-size: 18px;
+    }
+  }
+
+  .containerContainer {
+    grid-template-columns: minmax(auto, 15px) 1fr minmax(auto, 15px);
+
+    .sectionGrid {
+  
+      .title {
+        position: relative;
+        z-index: 200;
+        h1 {
+          font-size: 25px;
+          margin: 70px 0 20px 0;
+        }
+    
+        p {
+          font-size: 18px;
+        }
+      }
+  
+      .img {
+        margin: 0 auto;
+  
+        video { 
+          width: 74%; 
+          height: 100%;
+          top: 48%;
+          left: 49%;
+          transform: translateY(-50%) translateX(-50%);
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  .baixeSéries {
+    .sectionGrid {
+      .img {
+        padding: 20px;
+      }
+      .subFlex {
+        padding: 10px 0 10px 12px; 
+        width: 270px;        
+        bottom: 40px;
+
+        .imgCapa {
+          max-width: 35px;
+        }
+  
+        .subTitle {
+          p {
+            font-size: 14px;
+            text-align: left;
+          }
+  
+          span {
+            font-size: 12px;
+            
+          }
+        }
+  
+        .icodeDeLoading {
+          max-width: 40px;
+        }
+      }
+    }
+  } 
+  
+  .assistaQuandoquiser {
+    padding-top: 0;
+    .sectionGrid {
+      .title {
+        padding-right: 0;
+      }
+  
+      .img {
+        video { 
+          width: 62%; 
+          height: 100%;
+          top: 33%;
+          left: 49%;
+          transform: translateY(-50%) translateX(-50%);
+          position: absolute;
+        }
+      }
+    }
+  }
+  
+  .perguntasFrequentes {
+    padding: 50px 0;
+  
+    h1{
+      margin-bottom: 50px;
+      font-size: 26px;
+    }
+  
+    .perguntasContainer {
+      .pergunta {
+        padding: 16px 30px;
+        font-size: 18px;
+      }
+  
+      .resposta {
+        p {
+          font-size: 18px;
+        }
+
+        &.active {
+          padding: 20px;
+        }
+      }
+  
+    }
+  
+    & > p {
+      font-size: 18px;
+    }
+  
+    form {
+      max-width: 395px;
+    }
+  }
+
+  .footer {
+    padding: 60px 30px;
+
+    .containerFooter {
+      .flexFooter {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  }
+}
