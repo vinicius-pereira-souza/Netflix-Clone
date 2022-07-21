@@ -46,10 +46,13 @@ class Formulario {
     e.preventDefault()
     const msg = this.formulario.querySelector('label')
     if(this.input.value === '') {
-
       this.input.classList.add('err')
       msg.innerText = 'O email é obrigatório.'
       msg.classList.add('err')
+    } else if(this.input.value !== '' && this.input.value.endsWith('@gmail.com')) {
+      this.input.value = ''
+      msg.classList.remove('err')
+      this.input.classList.remove('err')
     }
   }
 
