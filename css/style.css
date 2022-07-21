@@ -246,11 +246,12 @@ body {
   z-index: 10;
 }
 .containerContainer .sectionGrid .img video {
-  max-width: 406px;
-  height: 227px;
+  width: 74%;
+  height: 100%;
+  top: 48%;
+  left: 49%;
+  transform: translateY(-50%) translateX(-50%);
   position: absolute;
-  top: 86px;
-  left: 73px;
 }
 
 .baixeSéries .sectionGrid {
@@ -297,10 +298,12 @@ body {
   padding-right: 50px;
 }
 .assistaQuandoquiser .sectionGrid .img video {
-  max-width: 337px;
-  height: 228px;
-  top: 25px;
-  left: 105px;
+  width: 62%;
+  height: 100%;
+  top: 33%;
+  left: 49%;
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
 }
 
 .criePerfis .sectionGrid {
@@ -563,38 +566,10 @@ body {
   background-color: #000;
 }
 
-@media (max-width: 1115px) {
-  .containerContainer {
-    grid-template-columns: minmax(auto, 30px) 1fr minmax(auto, 30px);
+@media (max-width: 1000px) {
+  .header {
+    height: 770px;
   }
-  .containerContainer .sectionGrid .img video {
-    max-width: 352px;
-    top: 60px;
-    left: 64px;
-  }
-  .assistaQuandoquiser .sectionGrid .img video {
-    max-width: 294px;
-    top: 10px;
-    left: 92px;
-  }
-}
-@media (max-width: 1050px) {
-  .containerContainer {
-    grid-template-columns: minmax(auto, 25px) 1fr minmax(auto, 25px);
-  }
-  .containerContainer .sectionGrid {
-    grid-template-columns: 1fr minmax(auto, 0) 1fr;
-  }
-  .containerContainer .sectionGrid video {
-    max-width: 360px;
-    top: 62px;
-    left: 64px;
-  }
-  .assistaQuandoquiser .sectionGrid .img video {
-    max-width: 300px;
-  }
-}
-@media (max-width: 990px) {
   .header h3 {
     font-size: 23px;
     max-width: 460px;
@@ -621,8 +596,11 @@ body {
   .header form button::before {
     top: 23px;
   }
+  .containerContainer {
+    grid-template-columns: minmax(auto, 50px) 1fr minmax(auto, 50px);
+  }
   .containerContainer .sectionGrid {
-    max-width: 800px;
+    max-width: 845px;
     text-align: center;
     padding-bottom: 50px;
     grid-template-columns: 1fr;
@@ -631,6 +609,7 @@ body {
   }
   .containerContainer .sectionGrid .title {
     position: relative;
+    z-index: 200;
   }
   .containerContainer .sectionGrid .title h1 {
     font-size: 40px;
@@ -643,10 +622,16 @@ body {
     margin: 0 auto;
   }
   .containerContainer .sectionGrid .img video {
-    max-width: 437px;
-    height: 260px;
-    top: 86px;
-    left: 79px;
+    width: 74%;
+    height: 100%;
+    top: 48%;
+    left: 49%;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+  }
+  .aproveiteNaTV .sectionGrid .title p {
+    font-size: 20px;
+    margin-bottom: -40px;
   }
   .assistaQuandoquiser {
     padding-top: 70px;
@@ -655,9 +640,12 @@ body {
     padding-right: 50px;
   }
   .assistaQuandoquiser .sectionGrid .img video {
-    max-width: 368px;
-    top: 20px;
-    left: 111px;
+    width: 62%;
+    height: 100%;
+    top: 33%;
+    left: 49%;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
   }
   .perguntasFrequentes {
     margin: 8px 0;
@@ -714,5 +702,153 @@ body {
   }
   .perguntasFrequentes form button::before {
     top: 23px;
+  }
+}
+@media (max-width: 750px) {
+  .header {
+    height: 770px;
+  }
+  .header h1 {
+    max-width: 620px;
+    font-size: 47px;
+  }
+  .header h3 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .header form {
+    grid-template-rows: 55px auto 40px;
+  }
+  .footer {
+    padding: 60px 30px;
+  }
+  .footer .containerFooter .flexFooter {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 570px) {
+  .header {
+    padding: 30px 25px 0 25px;
+    height: 620px;
+  }
+  .header .flexHeader {
+    max-width: 1240px;
+    margin: 0 auto 158px auto;
+  }
+  .header .flexHeader .logo {
+    width: 95px;
+    display: block;
+  }
+  .header .flexHeader .flexSelectLogin {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  .header .flexHeader .flexSelectLogin select {
+    padding: 6px 25px;
+  }
+  .header .flexHeader .flexSelectLogin a {
+    font-size: 14px;
+    padding: 7px 9px;
+  }
+  .header h1 {
+    font-size: 28px;
+  }
+  .header h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .header h3 {
+    font-size: 18px;
+  }
+  .containerContainer {
+    grid-template-columns: minmax(auto, 15px) 1fr minmax(auto, 15px);
+  }
+  .containerContainer .sectionGrid .title {
+    position: relative;
+    z-index: 200;
+  }
+  .containerContainer .sectionGrid .title h1 {
+    font-size: 25px;
+    margin: 70px 0 20px 0;
+  }
+  .containerContainer .sectionGrid .title p {
+    font-size: 18px;
+  }
+  .containerContainer .sectionGrid .img {
+    margin: 0 auto;
+  }
+  .containerContainer .sectionGrid .img video {
+    width: 74%;
+    height: 100%;
+    top: 48%;
+    left: 49%;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+  }
+  .baixeSéries .sectionGrid .img {
+    padding: 20px;
+  }
+  .baixeSéries .sectionGrid .subFlex {
+    padding: 10px 0 10px 12px;
+    width: 270px;
+    bottom: 40px;
+  }
+  .baixeSéries .sectionGrid .subFlex .imgCapa {
+    max-width: 35px;
+  }
+  .baixeSéries .sectionGrid .subFlex .subTitle p {
+    font-size: 14px;
+    text-align: left;
+  }
+  .baixeSéries .sectionGrid .subFlex .subTitle span {
+    font-size: 12px;
+  }
+  .baixeSéries .sectionGrid .subFlex .icodeDeLoading {
+    max-width: 40px;
+  }
+  .assistaQuandoquiser {
+    padding-top: 0;
+  }
+  .assistaQuandoquiser .sectionGrid .title {
+    padding-right: 0;
+  }
+  .assistaQuandoquiser .sectionGrid .img video {
+    width: 62%;
+    height: 100%;
+    top: 33%;
+    left: 49%;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+  }
+  .perguntasFrequentes {
+    padding: 50px 0;
+  }
+  .perguntasFrequentes h1 {
+    margin-bottom: 50px;
+    font-size: 26px;
+  }
+  .perguntasFrequentes .perguntasContainer .pergunta {
+    padding: 16px 30px;
+    font-size: 18px;
+  }
+  .perguntasFrequentes .perguntasContainer .resposta p {
+    font-size: 18px;
+  }
+  .perguntasFrequentes .perguntasContainer .resposta.active {
+    padding: 20px;
+  }
+  .perguntasFrequentes > p {
+    font-size: 18px;
+  }
+  .perguntasFrequentes form {
+    max-width: 395px;
+  }
+  .footer {
+    padding: 60px 30px;
+  }
+  .footer .containerFooter .flexFooter {
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }/*# sourceMappingURL=style.css.map */

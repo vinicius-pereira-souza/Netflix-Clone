@@ -17,21 +17,19 @@ class Formulario {
 
   validarValorInput = (e) => {
     const msg = this.formulario.querySelector('label')
+    const terminarCom = this.input.value.endsWith('@gmail.com')
+    const espacoEmBranco = /\s/g.test(this.input.value)
 
-    if(e.type == 'change' && !e.target.value.endsWith('@gmail.com')) {
+    if(e.type == 'change' && !terminarCom || espacoEmBranco) {
       this.input.classList.add('err')
       msg.innerText = 'Insira um email válido.'
       msg.classList.add('err')
-    } else {
-      this.input.classList.remove('err')
-      msg.classList.remove('err')
-    }
 
-    if(e.type == 'keyup' && this.input.value == '') {
+    } else if (e.type == 'keyup' && this.input.value == '') {
       this.input.classList.add('err')
       msg.innerText = 'O email é obrigatório.'
       msg.classList.add('err')
-    }
+    } 
   }
 
   encerrarAnimacao = (e) => {
@@ -47,8 +45,11 @@ class Formulario {
   enviarValor = (e) => {
     e.preventDefault()
     const msg = this.formulario.querySelector('label')
-    if(this.input.value.endsWith('@gmail.com')) {
-      this.input.value = ''
+    if(this.input.value === '') {
+
+      this.input.classList.add('err')
+      msg.innerText = 'O email é obrigatório.'
+      msg.classList.add('err')
     }
   }
 
