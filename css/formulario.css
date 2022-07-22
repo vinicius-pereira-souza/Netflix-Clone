@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("./_variaveisMixins.scss");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(360deg, rgb(0, 0, 0) 0, transparent 60%, rgba(0, 0, 0, 0.8)), url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Inter", sans-serif;
+}
+
+.header {
+  padding: 20px 40px;
+}
+.header .logo {
+  width: 165px;
+  display: block;
+}
+.header .logo svg path {
+  fill: red;
+}
+
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 60px 65px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.container h1 {
+  color: #fff;
+  margin-bottom: 25px;
+}
+.container form {
+  max-width: 100%;
+}
+.container form .inputContainer {
+  height: 50px;
+  position: relative;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  background-color: #454545;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.container form .inputContainer.err {
+  border-bottom: 2px solid #FFA00A;
+}
+.container form .inputContainer label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #8C8C8C;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+.container form .inputContainer input {
+  padding-left: 20px;
+  font-family: "Inter", sans-serif;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #454545;
+  border: none;
+  color: #fff;
+}
+.container form .inputContainer input:focus {
+  border: none;
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+.container form .inputContainer.focus label {
+  transition: 0.3s;
+  top: 13px;
+  font-size: 11px;
+}
+.container form .err {
+  color: #FFA00A;
+  font-size: 13px;
+  display: none;
+}
+.container form .err.activeErr {
+  display: block;
+}
+.container form .senha .mostrarSenha {
+  position: absolute;
+  right: 0;
+  display: none;
+  height: 100%;
+  border: none;
+  padding: 0 10px;
+  background-color: #454545;
+  font-size: 14px;
+  color: #8C8C8C;
+  text-transform: uppercase;
+}
+.container form .senha .mostrarSenha.active {
+  display: block;
+  top: 0;
+  border-radius: 0 5px 5px 0;
+}
+.container form .senha .mostrarSenha:hover {
+  cursor: pointer;
+}
+.container form .btnSubmit {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 40px;
+  background-color: #E50914;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+.container form .flexForm {
+  margin: 10px 0 90px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container form .flexForm span {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 2px;
+       column-gap: 2px;
+}
+.container form .flexForm span label {
+  font-size: 13px;
+  color: #b3b3b3;
+}
+.container form .flexForm a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #b3b3b3;
+}
+.container form .flexForm a:hover {
+  text-decoration: underline;
+  color: #b3b3b3;
+}
+.container .assistaAgora, .container .saibaMais {
+  color: #b3b3b3;
+}
+.container .assistaAgora {
+  margin-bottom: 10px;
+}
+.container .assistaAgora a {
+  text-decoration: none;
+  color: #Fff;
+}
+.container .assistaAgora a:hover {
+  text-decoration: underline;
+}
+.container .saibaMais {
+  font-size: 13px;
+  margin-bottom: 80px;
+}
+.container .saibaMais span {
+  color: #0071eb;
+}
+.container .saibaMais span:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  color: #b3b3b3;
+  margin-top: 90px;
+  padding: 30px 60px 50px 60px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.footer .containerFooter {
+  max-width: 995px;
+  margin: 0 auto;
+}
+.footer .containerFooter p {
+  margin-bottom: 35px;
+}
+.footer .containerFooter ul {
+  list-style: none;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer .containerFooter ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer .containerFooter .selectContainer {
+  position: relative;
+  margin: 20px 0;
+}
+.footer .containerFooter .selectContainer::after {
+  content: url("../img/globo icone.svg");
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 13px;
+}
+.footer .containerFooter select {
+  font-size: 16px;
+  padding: 15px 40px;
+  background-color: #000;
+  border: 1px solid #737373;
+  border-radius: 2px;
+  color: #737373;
+  -webkit-appearance: none;
+  position: relative;
+}
+.footer .containerFooter select option {
+  border: none;
+  background-color: #000;
+}/*# sourceMappingURL=formulario.css.map */
