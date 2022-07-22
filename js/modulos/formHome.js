@@ -1,4 +1,4 @@
-class Formulario {
+class FormHome {
   constructor(form, nome) {
     this.formulario = document.querySelector(`${form}[name="${nome}"]`)
     this.containerDoFormulario = this.formulario.parentNode
@@ -66,4 +66,4 @@ class Formulario {
 
 }
 
-export default Formulario
+export default FormHome
