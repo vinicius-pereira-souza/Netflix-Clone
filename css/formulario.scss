@@ -34,7 +34,6 @@ body {
   margin: 0 auto;
   border-radius: 5px;
   padding: 60px 65px;
-  box-shadow: 0 0 20px 20px linear-gradient(360deg,rgba(0,0,0,1.8) 0,transparent 60%,rgba(0,0,0,0.8));
   background-color: rgba(0,0,0,.75);
 
   h1 {
@@ -48,6 +47,7 @@ body {
     .inputContainer {
       height: 50px;
       position: relative;
+      padding-bottom: 5px;
       border-radius: 5px;
       background-color: #454545;
       display: flex;
@@ -98,10 +98,14 @@ body {
       color: #FFA00A;
       font-size: 13px;
       display: none;
+
+      &.activeErr {
+        display: block;
+      }
     }
 
     .senha {
-      button {
+      .mostrarSenha {
         position: absolute;
         right: 0;
         display: none;
@@ -111,7 +115,17 @@ body {
         background-color: #454545;
         font-size: 14px;
         color: #8C8C8C;
-        text-transform: uppercase;
+        text-transform: uppercase; 
+
+        &.active {
+          display: block;
+          top: 0;
+          border-radius: 0 5px 5px 0;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
