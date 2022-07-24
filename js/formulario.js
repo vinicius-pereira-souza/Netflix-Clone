@@ -1,57 +1,105 @@
 class Formulario {
   constructor() {
-    this.containerInputs = [...document.querySelectorAll('.inputContainer')]
+    this.containerInputs = document.querySelectorAll('.inputContainer')
     this.btnMostrarSenha = document.querySelector('.mostrarSenha')
-    this.containerSenha = this.btnMostrarSenha.parentNode
     this.btnSubmit = document.querySelector('.btnSubmit')
+
     this.adicionarEventos()
   }
 
   aniciarAnimacao = (e) => {
-    const container = e.target.parentNode
-    container.classList.add('focus')
+    const containerTarget = e.target.parentNode
+    containerTarget.classList.add('focus')
 
-    if(e.target.parentNode.classList.contains('containerSenha')) {
+    if(containerTarget.classList.contains('senha')) {
       this.btnMostrarSenha.classList.add('active')
     }
   }
 
-  validarInput = (e) => {
-    const input = e.target.parentNode.querySelector("input")
+  validarAoPrescionarTecla = (e) => {
+    const container = e.target.parentNode.classList.contains('errActive')
     const msgErr = e.target.parentNode.nextElementSibling
+    const terminarCom = e.target.value.endsWith('@gmail.com')
 
-    if(e.type == 'keyup' && input.value == '') {
+    if(e.target.name == 'password' && container && e.target.value.length >= 4) {
+      e.target.parentNode.classList.remove('errActive')
+      msgErr.classList.remove('activeErr')
+
+    } else if (e.target.name == 'password' && !container && e.target.value.length < 4){
+      e.target.parentNode.classList.add('errActive')
       msgErr.classList.add('activeErr')
     }
 
+    if(e.target.name == 'email' && container && terminarCom) {
+      e.target.parentNode.classList.remove('errActive')
+      msgErr.classList.remove('activeErr')
+
+    } else if (e.target.name == 'email' && !container && !terminarCom){
+      e.target.parentNode.classList.add('errActive')
+      msgErr.classList.add('activeErr')
+    }
   }
 
-  showPassWorld = (e) => {
+  mostrarPassword = (e) => {
     e.preventDefault()
-    const inputSenha = this.containerSenha.querySelector('input')
+    const inputSenha =  document.querySelector('#password')
+    
     if(inputSenha.getAttribute('type') == 'password') {
       inputSenha.setAttribute('type', 'text')
       e.target.innerText = 'ocultar'
+
     } else {
       inputSenha.setAttribute('type', 'password')
       e.target.innerText = 'mostrar'
     }
   }
 
+  validarValor = (e) => {
+    const msgErr = e.target.parentNode.nextElementSibling
+
+    if(e.target.value == '') {
+      e.target.parentNode.classList.add('errActive')
+      e.target.parentNode.classList.remove('focus')
+      msgErr.classList.add('activeErr')
+    }
+
+  }
+
   enviarFormulario = (e) => {
     e.preventDefault()
+    const inputs = document.querySelectorAll('.submit')
+
+    inputs.forEach(input => {
+      const msgErr = input.parentNode.nextElementSibling
+
+      if(input.name == 'email' && !e.target.value.endsWith('@gmail.com')) {
+        input.parentNode.classList.add('errActive')
+        msgErr.classList.add('activeErr')
+
+      } else if(input.name == 'password' && e.target.value.length < 4) {
+        input.parentNode.classList.add('errActive')
+        msgErr.classList.add('activeErr')
+      }
+
+    })
   }
 
   adicionarEventos = () => {
     this.containerInputs.forEach(container => {
-      const inputs = container.querySelector('input')
+      const input = container.querySelector('input')
 
       container.addEventListener('click', this.aniciarAnimacao)
-      inputs.addEventListener('keyup', this.validarInput)
-      inputs.addEventListener('change', this.validarInput)
+      input.addEventListener('focusout', this.validarValor)
     })
 
-    this.btnMostrarSenha.addEventListener('click', this.showPassWorld)
+    this.containerInputs.forEach(container => {
+      const input = container.querySelector('input')
+
+      input.addEventListener('keyup', this.validarAoPrescionarTecla)
+    })
+
+    this.btnMostrarSenha.addEventListener('click', this.mostrarPassword)
+
     this.btnSubmit.addEventListener('click', this.enviarFormulario)
   }
 }

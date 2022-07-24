@@ -50,7 +50,8 @@ body {
   flex-direction: column;
   margin-bottom: 15px;
 }
-.container form .inputContainer.err {
+.container form .inputContainer.errActive {
+  margin-bottom: 5px;
   border-bottom: 2px solid #FFA00A;
 }
 .container form .inputContainer label {
@@ -83,10 +84,12 @@ body {
 .container form .err {
   color: #FFA00A;
   font-size: 13px;
+  margin: 5px 0;
   display: none;
 }
 .container form .err.activeErr {
   display: block;
+  margin: 5px 0 20px 0;
 }
 .container form .senha .mostrarSenha {
   position: absolute;
