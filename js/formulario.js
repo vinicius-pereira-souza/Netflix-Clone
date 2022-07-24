@@ -2,6 +2,7 @@ class Formulario {
   constructor() {
     this.containerInputs = document.querySelectorAll('.inputContainer')
     this.btnMostrarSenha = document.querySelector('.mostrarSenha')
+    this.btnSubmit = document.querySelector('.btnSubmit')
 
     this.adicionarEventos()
   }
@@ -46,6 +47,7 @@ class Formulario {
     if(inputSenha.getAttribute('type') == 'password') {
       inputSenha.setAttribute('type', 'text')
       e.target.innerText = 'ocultar'
+
     } else {
       inputSenha.setAttribute('type', 'password')
       e.target.innerText = 'mostrar'
@@ -63,6 +65,25 @@ class Formulario {
 
   }
 
+  enviarFormulario = (e) => {
+    e.preventDefault()
+    const inputs = document.querySelectorAll('.submit')
+
+    inputs.forEach(input => {
+      const msgErr = input.parentNode.nextElementSibling
+
+      if(input.name == 'email' && !e.target.value.endsWith('@gmail.com')) {
+        input.parentNode.classList.add('errActive')
+        msgErr.classList.add('activeErr')
+
+      } else if(input.name == 'password' && e.target.value.length < 4) {
+        input.parentNode.classList.add('errActive')
+        msgErr.classList.add('activeErr')
+      }
+
+    })
+  }
+
   adicionarEventos = () => {
     this.containerInputs.forEach(container => {
       const input = container.querySelector('input')
@@ -78,6 +99,8 @@ class Formulario {
     })
 
     this.btnMostrarSenha.addEventListener('click', this.mostrarPassword)
+
+    this.btnSubmit.addEventListener('click', this.enviarFormulario)
   }
 }
 
