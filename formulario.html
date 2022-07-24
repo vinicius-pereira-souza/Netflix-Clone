@@ -23,16 +23,16 @@
   </header>
   <main class="container">
     <h1>Entrar</h1>
-    <form>
+    <form name="formPage">
       <div class="inputContainer containerEmail">
         <label for="email">Email ou número de telefone</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
       </div>
       <label class="err">Informe um email ou número de telefone válido.</label>
 
       <div class="inputContainer senha containerSenha">
         <label for="password">Senha</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required>
         <button class="mostrarSenha">mostrar</button>
       </div>
       <label class="err">A senha deve ter entre 4 e 60 caracteres.</label>

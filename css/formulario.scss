@@ -14,7 +14,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Inter', sans-serif;
-  background-color: $black;
 }
 
 .header {
@@ -55,8 +54,8 @@ body {
       justify-content: flex-end;
       flex-direction: column;
       margin-bottom: 15px;
-
-      &.err {
+      &.errActive {
+        margin-bottom: 5px;
         border-bottom: 2px solid #FFA00A;
       }
       
@@ -98,10 +97,12 @@ body {
     .err {
       color: #FFA00A;
       font-size: 13px;
+      margin: 5px 0;
       display: none;
 
       &.activeErr {
         display: block;
+        margin: 5px 0 20px 0;
       }
     }
 
