@@ -1,26 +1,83 @@
 class Formulario {
   constructor() {
-    this.formulario = document.querySelector('form')
-    this.btnSubit = this.formulario.elements[3]
-    // this.containerInputs = document.querySelectorAll('.inputContainer')
+    this.containerInputs = document.querySelectorAll('.inputContainer')
+    this.btnMostrarSenha = document.querySelector('.mostrarSenha')
 
     this.adicionarEventos()
   }
 
-  validarSubmit = (e) => {
-    e.preventDefault()
-    const input = e.target.parentNode.querySelector('input')
-    const inputContainer = e.target.parentNode
-    const msgErr = input.parentNode.nextElementSibling
-    
-    if(input.value == '') {
-      inputContainer.classList.add('errActive')
+  aniciarAnimacao = (e) => {
+    const containerTarget = e.target.parentNode
+    containerTarget.classList.add('focus')
+
+    if(containerTarget.classList.contains('senha')) {
+      this.btnMostrarSenha.classList.add('active')
+    }
+  }
+
+  validarAoPrescionarTecla = (e) => {
+    const container = e.target.parentNode.classList.contains('errActive')
+    const msgErr = e.target.parentNode.nextElementSibling
+    const terminarCom = e.target.value.endsWith('@gmail.com')
+
+    if(e.target.name == 'password' && container && e.target.value.length >= 4) {
+      e.target.parentNode.classList.remove('errActive')
+      msgErr.classList.remove('activeErr')
+
+    } else if (e.target.name == 'password' && !container && e.target.value.length < 4){
+      e.target.parentNode.classList.add('errActive')
+      msgErr.classList.add('activeErr')
+    }
+
+    if(e.target.name == 'email' && container && terminarCom) {
+      e.target.parentNode.classList.remove('errActive')
+      msgErr.classList.remove('activeErr')
+
+    } else if (e.target.name == 'email' && !container && !terminarCom){
+      e.target.parentNode.classList.add('errActive')
       msgErr.classList.add('activeErr')
     }
   }
 
+  mostrarPassword = (e) => {
+    e.preventDefault()
+    const inputSenha =  document.querySelector('#password')
+    
+    if(inputSenha.getAttribute('type') == 'password') {
+      inputSenha.setAttribute('type', 'text')
+      e.target.innerText = 'ocultar'
+    } else {
+      inputSenha.setAttribute('type', 'password')
+      e.target.innerText = 'mostrar'
+    }
+  }
+
+  validarValor = (e) => {
+    const msgErr = e.target.parentNode.nextElementSibling
+
+    if(e.target.value == '') {
+      e.target.parentNode.classList.add('errActive')
+      e.target.parentNode.classList.remove('focus')
+      msgErr.classList.add('activeErr')
+    }
+
+  }
+
   adicionarEventos = () => {
-    this.formulario.addEventListener('change', this.validarSubmit)
+    this.containerInputs.forEach(container => {
+      const input = container.querySelector('input')
+
+      container.addEventListener('click', this.aniciarAnimacao)
+      input.addEventListener('focusout', this.validarValor)
+    })
+
+    this.containerInputs.forEach(container => {
+      const input = container.querySelector('input')
+
+      input.addEventListener('keyup', this.validarAoPrescionarTecla)
+    })
+
+    this.btnMostrarSenha.addEventListener('click', this.mostrarPassword)
   }
 }
 
