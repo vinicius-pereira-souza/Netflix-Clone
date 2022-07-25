@@ -450,10 +450,7 @@ body {
   top: 15px;
   transition: 0.3s;
 }
-.perguntasFrequentes form .paddingPlaceholder .placeholderAnimation.active.err {
-  border-bottom: 2px solid #FFA00A;
-}
-.perguntasFrequentes form .paddingPlaceholder .placeholderAnimation.err {
+.perguntasFrequentes form .paddingPlaceholder.err {
   border-bottom: 2px solid #FFA00A;
 }
 .perguntasFrequentes form .paddingPlaceholder.active input:focus {
@@ -461,11 +458,20 @@ body {
   box-shadow: 0 0 0 0;
   outline: 0;
 }
+.perguntasFrequentes form .paddingPlaceholder.active input .placeholderAnimation {
+  font-size: 13px;
+  font-weight: 400;
+  top: 15px;
+  transition: 0.3s;
+}
 .perguntasFrequentes form .paddingPlaceholder.active .placeholderAnimation {
   font-size: 13px;
   font-weight: 400;
   top: 15px;
   transition: 0.3s;
+}
+.perguntasFrequentes form .paddingPlaceholder.active.err {
+  border-bottom: 2px solid #FFA00A;
 }
 .perguntasFrequentes form label {
   grid-area: msg;
