@@ -133,6 +133,7 @@ body {
   height: 45px;
   border: none;
   padding-left: 15px;
+  font-family: "Inter", sans-serif;
 }
 .header form .paddingPlaceholder input:focus {
   border: none;
@@ -433,6 +434,7 @@ body {
   height: 45px;
   border: none;
   padding-left: 15px;
+  font-family: "Inter", sans-serif;
 }
 .perguntasFrequentes form .paddingPlaceholder input:focus {
   border: none;

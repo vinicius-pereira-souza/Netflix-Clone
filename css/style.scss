@@ -145,6 +145,7 @@ body {
         height: 45px;
         border: none;
         padding-left: 15px;
+        font-family: 'Inter', sans-serif;
 
         &:focus {
           border: none;
@@ -495,7 +496,8 @@ body {
         height: 45px;
         border: none;
         padding-left: 15px;
-
+        font-family: 'Inter', sans-serif;
+        
         &:focus {
           border: none;
           box-shadow: 0 0 0 0;
