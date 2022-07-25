@@ -226,6 +226,12 @@ body {
       position: relative;
       transition: 0.3s;
 
+      &:hover {
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: $red_hover;
+      }
+
       &::after, &::before {
         content: '';
         display: block;
@@ -442,7 +448,7 @@ body {
       padding: 0 30px;
       overflow-y: hidden;
       margin: 2px auto 5px auto;
-      background-color: #303030;
+      background-color: $gray_background_question;
       transition: 0.3s;
 
       p {
@@ -569,6 +575,12 @@ body {
       font-family: 'Inter', sans-serif;
       position: relative;
       transition: 0.3s;
+
+      &:hover {
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: $red_hover;
+      }
 
       &::after, &::before {
         content: '';

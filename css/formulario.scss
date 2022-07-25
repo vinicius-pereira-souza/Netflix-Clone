@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@import url('./_variaveisMixins.scss');
+@import './_variaveisMixins.scss';
 
 * {
   margin: 0;
@@ -24,7 +24,7 @@ body {
     display: block;
 
     svg path {
-      fill: red;
+      fill: $red;
     }
   }
 }
@@ -34,10 +34,10 @@ body {
   margin: 0 auto;
   border-radius: 5px;
   padding: 60px 65px;
-  background-color: rgba(0,0,0,.75);
+  background-color: $new_gray_Form;
 
   h1 {
-    color: #fff;
+    color: $white;
     margin-bottom: 25px;
   }
 
@@ -49,14 +49,14 @@ body {
       position: relative;
       padding-bottom: 5px;
       border-radius: 5px;
-      background-color: #333333;
+      background-color: $gray_background_body;
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
       margin-bottom: 15px;
       &.errActive {
         margin-bottom: 5px;
-        border-bottom: 2px solid #FFA00A;
+        border-bottom: 2px solid $err;
       }
       
 
@@ -64,7 +64,7 @@ body {
         position: absolute;
         top: 50%;
         left: 20px;
-        color: #8C8C8C;
+        color: $gray_placeholder;
         transform: translateY(-50%);
         transition: 0.3s;
       }
@@ -74,9 +74,9 @@ body {
         font-family: 'Inter', sans-serif;
         height: 25px;
         border-radius: 5px;
-        background-color: #333333;
+        background-color: $gray_background_body;
         border: none;
-        color: #fff;
+        color: $white;
 
         &:focus {
           border: none;
@@ -95,7 +95,7 @@ body {
     }
 
     .err {
-      color: #FFA00A;
+      color: $err;
       font-size: 13px;
       margin: 5px 0;
       display: none;
@@ -114,9 +114,9 @@ body {
         height: 100%;
         border: none;
         padding: 0 10px;
-        background-color: #454545;
+        background-color: $gray_background_body;
         font-size: 14px;
-        color: #8C8C8C;
+        color: $gray_placeholder;
         text-transform: uppercase; 
 
         &.active {
@@ -138,11 +138,18 @@ body {
       border: none;
       border-radius: 5px;
       margin-top: 40px;
-      background-color: #E50914;
+      transition: 0.3s;
+      background-color: $red;
       font-size: 16px;
-      color: #fff;
+      color: $white;
       font-weight: 700;
       font-family: 'Inter', sans-serif;
+
+      &:hover {
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: $red_hover;
+      }
     }
 
     .flexForm {
@@ -158,32 +165,32 @@ body {
 
         label {
           font-size: 13px;
-          color: #b3b3b3;
+          color: $gray_placeholder;
         }
       }
 
       a {
         text-decoration: none;
         font-size: 13px;
-        color: #b3b3b3;
+        color: $gray_placeholder;
 
         &:hover {
           text-decoration: underline;
-          color: #b3b3b3;
+          color: $gray_placeholder;
         }
       }
     }
   }
 
   .assistaAgora, .saibaMais {
-    color: #b3b3b3;
+    color: $gray_placeholder;
   }
 
   .assistaAgora {
     margin-bottom: 10px;
     a {
       text-decoration: none;
-      color: #Fff;
+      color: $white;
 
       &:hover {
         text-decoration: underline;
@@ -196,7 +203,7 @@ body {
     margin-bottom: 80px;
 
     span {
-      color: #0071eb;
+      color: $blue;
 
       &:hover {
         text-decoration: underline;
@@ -206,10 +213,10 @@ body {
 }
 
 .footer {
-  color: #b3b3b3;
+  color: $gray_placeholder;
   margin-top: 90px;
   padding: 30px 60px 50px 60px;
-  background-color: rgba(0,0,0,.75);
+  background-color: $new_gray_Form;
 
   .containerFooter {
     max-width: 995px;
@@ -251,16 +258,16 @@ body {
     select {
       font-size: 16px;
       padding: 15px 40px;
-      background-color: #000;
-      border: 1px solid #737373;
+      background-color: $black;
+      border: 1px solid $gray_content;
       border-radius: 2px;
-      color: #737373;
+      color: $gray_content;
       -webkit-appearance: none;
       position: relative;
 
       option {
         border: none;
-        background-color: #000;
+        background-color: $black;
       }
     }
   }
@@ -268,7 +275,7 @@ body {
 
 @media(max-width: 740px) {
   body {
-    background-color: #000;
+    background-color: $black;
     background-image: none;
   }
 
@@ -279,7 +286,7 @@ body {
   .container {
     max-width: 100%;
     padding: 30px 40px 2px 40px;
-    border-bottom: 1px solid #737373;
+    border-bottom: 1px solid $gray_content;
   
     form {
       max-width: 100%;

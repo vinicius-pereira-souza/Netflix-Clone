@@ -85,4 +85,3 @@ class FormHome {
 }
 
 export default FormHome
-// const formHome1 = new FormHome('form', 'formHeader')
