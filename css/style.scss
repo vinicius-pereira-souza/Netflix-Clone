@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@import url('./_variaveisMixins.scss');
+@import './_variaveisMixins.scss';
 
 * {
   margin: 0;
@@ -168,18 +168,25 @@ body {
           transition: 0.3s;
         }
       }
+
+      &.err {
+        border-bottom: 2px solid $err;
+      }
     }
 
     .paddingPlaceholder.active {
       input {
-
-        &.err {
-          border-bottom: 2px solid $err!important;
-        }
         &:focus {
           border: none;
           box-shadow: 0 0 0 0;
           outline: 0;
+        }
+
+        .placeholderAnimation {
+          font-size: 13px;
+          font-weight: 400;
+          top: 15px;
+          transition: 0.3s;
         }
       }
 
@@ -188,6 +195,10 @@ body {
         font-weight: 400;
         top: 15px;
         transition: 0.3s;
+      }
+
+      &.err {
+        border-bottom: 2px solid $err;
       }
     }
 
@@ -502,23 +513,36 @@ body {
         }
       }
 
-      &.active {
-        input {
-          &.err {
-            border-bottom: 2px solid $err!important;
-          }
-          &:focus {
-            border: none;
-            box-shadow: 0 0 0 0;
-            outline: 0;
-          }
+      &.err {
+        border-bottom: 2px solid $err;
+      }
+    }
+
+    .paddingPlaceholder.active {
+      input {
+        &:focus {
+          border: none;
+          box-shadow: 0 0 0 0;
+          outline: 0;
         }
+
         .placeholderAnimation {
           font-size: 13px;
           font-weight: 400;
           top: 15px;
           transition: 0.3s;
         }
+      }
+
+      .placeholderAnimation {
+        font-size: 13px;
+        font-weight: 400;
+        top: 15px;
+        transition: 0.3s;
+      }
+
+      &.err {
+        border-bottom: 2px solid $err;
       }
     }
 
@@ -545,7 +569,7 @@ body {
       font-family: 'Inter', sans-serif;
       position: relative;
       transition: 0.3s;
-      
+
       &::after, &::before {
         content: '';
         display: block;
@@ -555,7 +579,6 @@ body {
         position: absolute;
         right: 20px;
       }
-
       &::after {
         top: 24px;
         transform: rotate(40deg);
@@ -565,8 +588,8 @@ body {
         transform: rotate(-40deg);
       }
     }
-
   }
+
 }
 
 .footer {
