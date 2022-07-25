@@ -200,6 +200,11 @@ body {
   position: relative;
   transition: 0.3s;
 }
+.header form button:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #F40612;
+}
 .header form button::after, .header form button::before {
   content: "";
   display: block;
@@ -494,6 +499,11 @@ body {
   font-family: "Inter", sans-serif;
   position: relative;
   transition: 0.3s;
+}
+.perguntasFrequentes form button:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #F40612;
 }
 .perguntasFrequentes form button::after, .perguntasFrequentes form button::before {
   content: "";
