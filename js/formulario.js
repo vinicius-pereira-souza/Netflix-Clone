@@ -7,6 +7,9 @@ class Formulario {
     this.adicionarEventos()
   }
 
+  // inicia a animação do placeholder ao clicar no container do input
+  // se o input for de senha irá dar uma classe ao botão com display 
+  // de block
   aniciarAnimacao = (e) => {
     const containerTarget = e.target.parentNode
     containerTarget.classList.add('focus')
@@ -16,6 +19,10 @@ class Formulario {
     }
   }
 
+  // O primeiro if remove a classe de focus do container do input caso o valor seja vazio
+  // e mostra a mensagem de erro
+  // O segundo if verifica se o input é de email se for irá iniciar uma função para validar o valor
+  // O terceiro if faz a mesma coisa de os anterior mas para o input de senha
   validarValorInput = (e) => {
     const msgErr = e.target.parentNode.nextElementSibling
     const inputVazio = e.target.value == ''
@@ -38,6 +45,7 @@ class Formulario {
 
   }
 
+  // Irá validar o input de email 
   validarEmail = (target, msgErr, valorInput) => {
     if(!valorInput) {
       target.parentNode.classList.add('errActive')
@@ -48,6 +56,7 @@ class Formulario {
     }
   }
 
+  // Irá validar o input de senha e checar se possui mais de 4 caracteres 
   validarSenha = (target, msgErr, valorInput) => {
     if(!valorInput) {
       target.parentNode.classList.add('errActive')
@@ -63,6 +72,8 @@ class Formulario {
     }
   }
 
+  // Ao clicar no botão 'mostrar' irá trocar o type de 'password' para 'text'
+  // e vice versa alterando o texto do botão
   mostrarSenha = (e) => {
     e.preventDefault()
     const inputSenha =  document.querySelector('#password')
@@ -77,6 +88,11 @@ class Formulario {
     }
   }
 
+  // O primeiro if verifica que se ao clicar no botão de entrar o input do email
+  // não terminar com @gmail.com se não termina irá acionar a mensagem de erro
+  // o mesmo vale para o input de senha mas irá checar se possui menos de 4 caracteres
+  // O segundo if verifica se o valor de ambos os inputs são validos 
+  // O terceiro if verifica se ambos for validos se for o input irá limpo   
   validarValorNoSubmit = (e) => {
     e.preventDefault()
     const inputs = document.querySelectorAll('.submit')
