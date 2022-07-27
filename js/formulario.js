@@ -7,9 +7,9 @@ class Formulario {
     this.adicionarEventos()
   }
 
-  // iniciando a animação do placeholder
-  //verificando se o input é de senha 
-  // se for coloca a classe active que irá fazer o botão para ver a senha aparecer
+  // inicia a animação do placeholder ao clicar no container do input
+  // se o input for de senha irá dar uma classe ao botão com display 
+  // de block
   aniciarAnimacao = (e) => {
     const containerTarget = e.target.parentNode
     containerTarget.classList.add('focus')
@@ -19,40 +19,65 @@ class Formulario {
     }
   }
 
-  // o primeiro if verifica se a senha tem a classe errActive 
-  // e se a quantidade de caracteres é maior ou igual a 4
-  // o else if faz exatamente o contrario
-  // o segundo if faz a mesma coisa que o primeiro só que para o email
-  validarAoPrescionarTecla = (e) => {
-    const container = e.target.parentNode.classList.contains('errActive')
+  // O primeiro if remove a classe de focus do container do input caso o valor seja vazio
+  // e mostra a mensagem de erro
+  // O segundo if verifica se o input é de email se for irá iniciar uma função para validar o valor
+  // O terceiro if faz a mesma coisa de os anterior mas para o input de senha
+  validarValorInput = (e) => {
     const msgErr = e.target.parentNode.nextElementSibling
-    const terminarCom = e.target.value.endsWith('@gmail.com')
+    const inputVazio = e.target.value == ''
+    const valorInputInvalido = e.target.checkValidity()
 
-    if(e.target.name == 'password' && container && e.target.value.length >= 4) {
-      e.target.parentNode.classList.remove('errActive')
-      msgErr.classList.remove('activeErr')
-
-    } else if (e.target.name == 'password' && !container && e.target.value.length < 4){
+    if(inputVazio) {
       e.target.parentNode.classList.add('errActive')
+      e.target.parentNode.classList.remove('focus')
       msgErr.classList.add('activeErr')
+    } else if(!inputVazio){
+      e.target.parentNode.classList.add('focus')
     }
 
-    if(e.target.name == 'email' && container && terminarCom) {
-      e.target.parentNode.classList.remove('errActive')
-      msgErr.classList.remove('activeErr')
+    if(e.target.name == 'email' && valorInputInvalido) {
+      this.validarEmail(e.target, msgErr, valorInputInvalido)
+    }
+    if(e.target.name == 'password') {
+      this.validarSenha(e.target, msgErr, valorInputInvalido)
+    }
 
-    } else if (e.target.name == 'email' && !container && !terminarCom){
-      e.target.parentNode.classList.add('errActive')
+  }
+
+  // Irá validar o input de email 
+  validarEmail = (target, msgErr, valorInput) => {
+    if(!valorInput) {
+      target.parentNode.classList.add('errActive')
       msgErr.classList.add('activeErr')
+    } else {
+      target.parentNode.classList.remove('errActive')
+      msgErr.classList.remove('activeErr')
+    }
+  }
+
+  // Irá validar o input de senha e checar se possui mais de 4 caracteres 
+  validarSenha = (target, msgErr, valorInput) => {
+    if(!valorInput) {
+      target.parentNode.classList.add('errActive')
+      msgErr.classList.add('activeErr')
+
+    } else if (valorInput && target.value < 4) {
+      target.parentNode.classList.add('errActive')
+      msgErr.classList.add('activeErr')
+
+    }else {
+      target.parentNode.classList.remove('errActive')
+      msgErr.classList.remove('activeErr')
     }
   }
 
   // Ao clicar no botão 'mostrar' irá trocar o type de 'password' para 'text'
   // e vice versa alterando o texto do botão
-  mostrarPassword = (e) => {
+  mostrarSenha = (e) => {
     e.preventDefault()
     const inputSenha =  document.querySelector('#password')
-    
+    inputSenha.focus()
     if(inputSenha.getAttribute('type') == 'password') {
       inputSenha.setAttribute('type', 'text')
       e.target.innerText = 'ocultar'
@@ -63,33 +88,18 @@ class Formulario {
     }
   }
 
-  // verifica se o valor de algum input for vazio 
-  // caso seja vazio o placeholder voltara a posição original 
-  // e a mensagem de erro irá aparecer
-  validarValor = (e) => {
-    const msgErr = e.target.parentNode.nextElementSibling
-
-    if(e.target.value == '') {
-      e.target.parentNode.classList.add('errActive')
-      e.target.parentNode.classList.remove('focus')
-      msgErr.classList.add('activeErr')
-    }
-
-  }
-
   // O primeiro if verifica que se ao clicar no botão de entrar o input do email
   // não terminar com @gmail.com se não termina irá acionar a mensagem de erro
   // o mesmo vale para o input de senha mas irá checar se possui menos de 4 caracteres
   // O segundo if verifica se o valor de ambos os inputs são validos 
   // O terceiro if verifica se ambos for validos se for o input irá limpo   
-  enviarFormulario = (e) => {
+  validarValorNoSubmit = (e) => {
     e.preventDefault()
     const inputs = document.querySelectorAll('.submit')
 
     inputs.forEach(input => {
       const msgErr = input.parentNode.nextElementSibling
-
-      if(input.name == 'email' && !e.target.value.endsWith('@gmail.com')) {
+      if(input.name == 'email' && !input.checkValidity()) {
         input.parentNode.classList.add('errActive')
         msgErr.classList.add('activeErr')
 
@@ -116,8 +126,6 @@ class Formulario {
       inputs[1].value = ''
       
     }
-    
-
   }
 
   // Adiciona os eventos as elementos selecionados
@@ -125,19 +133,12 @@ class Formulario {
     this.containerInputs.forEach(container => {
       const input = container.querySelector('input')
 
+      input.addEventListener('focusout', this.validarValorInput)
+      input.addEventListener('keyup', this.validarValorInput)
       container.addEventListener('click', this.aniciarAnimacao)
-      input.addEventListener('focusout', this.validarValor)
     })
-
-    this.containerInputs.forEach(container => {
-      const input = container.querySelector('input')
-
-      input.addEventListener('keyup', this.validarAoPrescionarTecla)
-    })
-
-    this.btnMostrarSenha.addEventListener('click', this.mostrarPassword)
-
-    this.btnSubmit.addEventListener('click', this.enviarFormulario)
+    this.btnMostrarSenha.addEventListener('click', this.mostrarSenha)
+    this.btnSubmit.addEventListener('click', this.validarValorNoSubmit)
   }
 }
 
