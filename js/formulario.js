@@ -21,7 +21,6 @@ class Formulario {
     const msgErr = e.target.parentNode.nextElementSibling
     const inputVazio = e.target.value == ''
     const valorInputInvalido = e.target.checkValidity()
-    const condicaoCaracteres = e.target.value < 4
 
     if(inputVazio) {
       e.target.parentNode.classList.add('errActive')
@@ -37,6 +36,10 @@ class Formulario {
     if(e.target.name == 'email') {
       this.validarEmail(e.target, msgErr, valorInputInvalido)
     }
+    if(e.target.name == 'password') {
+      this.validarSenha(e.target, msgErr, valorInputInvalido)
+    }
+
   }
 
   validarEmail = (target, msgErr, valorInput) => {
@@ -49,12 +52,28 @@ class Formulario {
     }
   }
 
+  validarSenha = (target, msgErr, valorInput) => {
+    if(!valorInput) {
+      target.parentNode.classList.add('errActive')
+      msgErr.classList.add('activeErr')
+
+    } else if (valorInput && target.value < 4) {
+      target.parentNode.classList.add('errActive')
+      msgErr.classList.add('activeErr')
+
+    }else {
+      target.parentNode.classList.remove('errActive')
+      msgErr.classList.remove('activeErr')
+    }
+  }
+
   // Adiciona os eventos as elementos selecionados
   adicionarEventos = () => {
     this.containerInputs.forEach(container => {
       const input = container.querySelector('input')
 
       input.addEventListener('focusout', this.validarAoFocusOut)
+      input.addEventListener('keyup', this.validarAoFocusOut)
       container.addEventListener('click', this.aniciarAnimacao)
     })
   }
