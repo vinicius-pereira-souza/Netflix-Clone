@@ -18,7 +18,7 @@ aprimorar minhas habilidades as tecnologias descritas neste readme.</p>
 </ul>
 
 <h2>Fonte Family Utilizada</h2>
-<p>fonte utilizada : 'Inter', sans-serif</p>
+<p>'Inter', sans-serif</p>
 
 <h2>Breakpoints</h2>
 <p>1000px, 750px, 530px</p>
