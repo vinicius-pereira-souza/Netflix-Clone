@@ -1,5 +1,4 @@
 <h1>Clone Netflix</h1>
-<hr>
 <p>Eu escolhi copiar este site apenas pelos os motivos de que era simples e poder aprender a usar video responsivo, e
 aprimorar minhas habilidades as tecnologias descritas neste readme.</p>
 <h2>Cores Utilizadas</h2>
@@ -19,9 +18,9 @@ aprimorar minhas habilidades as tecnologias descritas neste readme.</p>
 </ul>
 
 <h2>Fonte Family Utilizada</h2>
-<p>fonte utilizada : 'Inter', sans-serif</p>
+<p>'Inter', sans-serif</p>
 
-<h2>Breakpoints</h2>
+<h2>Breakpoints utilizados</h2>
 <p>1000px, 750px, 530px</p>
 
 <h2>Tecnologias utilizadas</h2>
@@ -31,11 +30,11 @@ aprimorar minhas habilidades as tecnologias descritas neste readme.</p>
   <li>JavaScript</li>
 </ul>
 
-<h2>Familia de fonte Utilizada</h2>
+<h2>Família tipográfica Utilizada</h2>
 <p>fonte utilizada : 'Inter', sans-serif</p>
-<hr>
-<img src="img/home.png" alt="imagem da pagina home">
-<img src="img/formulario.png" alt="imagem da pagina de login">
-<p>caso os videos não estejam funcionando basta clicar no logo.</p>
-<p>para abrir a pagina na qual esta o formulario basta clicar no botão de entrar no proprio projeto.</p>
+
+<img src="img/home.png" alt="imagem da página home">
+<img src="img/formulario.png" alt="imagem da página de login">
+<p>caso os vídeos não estejam funcionando basta clicar no logo.</p>
+<p>para abrir a página na qual se encontra o formulario basta clicar no botão de entrar no proprio projeto.</p>
 <a href="https://vinicius-pereira-souza.github.io/Netflix-Clone/">Demonstração</a>
