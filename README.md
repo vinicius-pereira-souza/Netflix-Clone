@@ -1,5 +1,4 @@
 <h1>Clone Netflix</h1>
-<hr>
 <p>Eu escolhi copiar este site apenas pelos os motivos de que era simples e poder aprender a usar video responsivo, e
 aprimorar minhas habilidades as tecnologias descritas neste readme.</p>
 <h2>Cores Utilizadas</h2>
@@ -33,7 +32,7 @@ aprimorar minhas habilidades as tecnologias descritas neste readme.</p>
 
 <h2>Familia de fonte Utilizada</h2>
 <p>fonte utilizada : 'Inter', sans-serif</p>
-<hr>
+
 <img src="img/home.png" alt="imagem da pagina home">
 <img src="img/formulario.png" alt="imagem da pagina de login">
 <p>caso os videos não estejam funcionando basta clicar no logo.</p>
